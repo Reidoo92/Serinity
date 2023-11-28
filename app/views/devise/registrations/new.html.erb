@@ -37,9 +37,7 @@
                 autofocus: true,
                 input_html: { "data-controller" => "speciality", "data-action" => "change->speciality#showOrHideSpeciality" } %>
     <%= f.input :speciality,
-            collection: ["Psychologue", "Psychatre"],
-            label: false,
-            input_html: { class: "hidden" } %>
+            collection: ["Psychologue", "Psychatre"] %>
 
   </div>
 
