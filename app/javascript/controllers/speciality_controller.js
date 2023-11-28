@@ -4,12 +4,14 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   static targets = ["speciality"];
 
-  connect() {
-    this.hideSpeciality();
-  }
+  connect() {}
 
   hideSpeciality() {
     this.specialityTarget.classList.add("hidden");
+  }
+
+  showSpeciality() {
+    this.specialityTarget.classList.remove("hidden");
   }
 
   showOrHideSpeciality() {
@@ -20,9 +22,5 @@ export default class extends Controller {
     } else {
       this.hideSpeciality();
     }
-  }
-
-  showSpeciality() {
-    this.specialityTarget.classList.remove("hidden");
   }
 }
