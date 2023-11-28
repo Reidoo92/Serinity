@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-
-User.create("doctor@gmail.com", "Galaad", "Michaud", 24, "0612345678", "123 rue de la paix", "Gynecologue", :doctor)
-User.create("patient@gmail.com", "Gilson", "Djassan", 25, "0687654321", "321 rue de la paix", "Harcélement scolaire", :patient)
+p "Creating Seed"
+User.create(email: "galaad@gmail.com", password: "galaad@gmail.com", first_name: "Galaad", last_name: "Michaud", age: 24, number: "0612345678", adress: "123 rue de la paix", speciality: "Gynecologue", role: "doctor")
+User.create(email: "gilson@gmail.com", password: "gilson@gmail.com", first_name: "Gilson", last_name: "Djassan", age: 25, number: "0687654321", adress: "321 rue de la paix", role: "patient")
+p "Seed created"

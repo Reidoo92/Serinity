@@ -20,6 +20,10 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "number" }%>
+    <%= f.input :adress,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "adress" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -32,7 +36,7 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :role,
-                collection: ["doctor", "patient"],
+                collection: ["Doctor", "Patient"],
                 required: true,
                 autofocus: true,
                 input_html: { "data-controller" => "speciality", "data-action" => "change->speciality#showOrHideSpeciality" } %>

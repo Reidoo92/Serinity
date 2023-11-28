@@ -1,7 +1,22 @@
 <div>
-  <%= image_tag("bgc_home", class: "background-image", alt: "Background for video games") %>
-  <div class="bgc_opacity"></div>
-  <div class="home_page">
-    <h1>Pages#home</h1>
-  </div>
+  <% unless @user.present? && @user.role == "doctor" %>
+    <%= image_tag("bgc_home", class: "background-image", alt: "Background for video games") %>
+    <div class="bgc_opacity"></div>
+    <div class="home_page">
+      <h1>Pages#home</h1>
+  <% end %>
+
+  <% if @user.present? %>
+    <% if @user.role == "doctor" %>
+      <div>
+        <p>CODE DASHBOARD DOCTOR</p>
+      </div>
+    <% end %>
+
+    <% if @user.role == "patient" %>
+      <div>
+        <p>CODE HOME PATIENT</p>
+      </div>
+    <% end %>
+  <% end %>
 </div>
