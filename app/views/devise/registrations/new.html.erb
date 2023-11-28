@@ -4,6 +4,22 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "fisrt_name" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :age,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "age" }%>
+    <%= f.input :number,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "phone_number" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,6 +31,16 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :role,
+                collection: ["doctor", "patient"],
+                required: true,
+                autofocus: true,
+                input_html: { "data-controller" => "speciality", "data-action" => "change->speciality#showOrHideSpeciality" } %>
+    <%= f.input :speciality,
+            collection: ["Psychologue", "Psychatre"],
+            label: false,
+            input_html: { class: "hidden" } %>
+
   </div>
 
   <div class="form-actions">
