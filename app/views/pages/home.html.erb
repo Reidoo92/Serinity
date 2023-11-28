@@ -8,10 +8,124 @@
 
   <% if @user.present? %>
     <% if @user.role == "doctor" %>
-      <div>
-        <p>CODE DASHBOARD DOCTOR</p>
+      <div class="dashboard">
+
+        <!-- Div pour les 4 carte du haut du dashboard de Patient à Chiffre d'affaires -->
+        <div class="card-container">
+
+          <div class="card-top">
+            <h3><strong>Patients</strong></h1>
+            <strong><%= User.where(role: "patient").count %></strong>
+          </div>
+
+          <div class="card-top">
+            <h3><strong>consultations précédentes</strong></h3>
+            <p><strong>57</strong></p>
+          </div>
+
+          <div class="card-top">
+            <h3><strong>Prochaines consultations</strong></h3>
+            <p><strong>28</strong></p>
+          </div>
+
+          <div class="card-top">
+            <h3><strong>Chiffre d'affaire</strong></h3>
+            <div class="chiffre-affaire">
+              <p><strong>5000€</strong><p>
+              <p class="pourcent-up">+7,03%</p>
+            </div>
+          </div>
+
+        </div>
+
+
+      <!-- Div pour les 2 carte du milieux de la page "Catégorie de patients" et "consultation de la semaine" -->
+        <div class="midle-container">
+
+          <div class="patient-type-card">
+            <h3><strong>Type de patients</strong></h3>
+
+            <div class="patient-container">
+              <%= image_tag("stat_rond.jpg",style: "border-radius: 50%;") %>
+              <ul>
+                <li>
+                  Harcélment scolaire
+                  39,7 %
+                </li>
+                <li>
+                  Harcélement sexuel
+                  23,8 %
+                </li>
+                <li>
+                  Cyber Harcélement
+                  22,4 %
+                </li>
+                <li>
+                  Other .....
+                  14,1 %
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+          <div class="week-reservation-card">
+            <h3><strong>Consulation de la semaine</strong></h3>
+
+            <div>
+              <ul>
+                <li class="week-reservation">
+                  <strong>Lundi :</strong>
+                  <p>5</p>
+                </li>
+                <li class="week-reservation">
+                  <strong>Mardi :</strong>
+                  <p>6</p>
+                </li>
+                <li class="week-reservation">
+                  <strong>Mercredi :</strong>
+                  <p>5</p>
+                </li>
+                <li class="week-reservation">
+                  <strong>Jeudi :</strong>
+                  <p>4</p>
+                </li>
+                <li class="week-reservation">
+                  <strong>Vendredi :</strong>
+                  <p>6</p>
+                </li>
+                <li class="week-reservation">
+                  <strong>Samedi :</strong>
+                  <p>2</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+        <!-- Div pour l'activité du mois -->
+
+        <div>
+
+        </div>
+
+
       </div>
     <% end %>
+
+
+
+<!-- ---------------- Home patient et non connecter ---------------- -->
+
+
+
+
+
 
     <% if @user.role == "patient" %>
       <div>

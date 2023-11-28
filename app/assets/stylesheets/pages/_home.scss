@@ -30,3 +30,77 @@
   color: white; /* Couleur du texte sur l'image */
   text-align: center; /* Alignement du texte dans le centre */
 }
+
+/*--------------------- Dashboard Top ---------------------*/
+.dashboard {
+  margin: 50px;
+}
+
+.pourcent-up {
+  color: green;
+}
+
+.pourcent-down {
+  color: red;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba($color: #c9f0ff, $alpha: 0.6);
+  width: 220px;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.chiffre-affaire {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/*--------------------- Dashboard Midle ---------------------*/
+
+.midle-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 300px;
+}
+
+.patient-type-card {
+  background-color: rgba($color: #c9f0ff, $alpha: 0.6);
+  width: 800px;
+  border-radius: 32px;
+  padding: 20px;
+}
+
+.patient-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  margin-left: 40px;
+  margin-top: 48px;
+}
+
+.week-reservation-card {
+  background-color: rgba($color: #c9f0ff, $alpha: 0.6);
+  border-radius: 32px;
+  padding: 20px;
+}
+
+.week-reservation {
+  display: flex;
+  gap: 10px;
+}
