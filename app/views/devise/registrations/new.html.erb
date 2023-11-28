@@ -1,53 +1,79 @@
-<h2>Sign up</h2>
+<body class="no-navbar">
+  <div class="container-signup">
+    <h2 class="h2-signup">Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first_name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "last_name" }%>
-    <%= f.input :age,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "age" }%>
-    <%= f.input :number,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "number" }%>
-    <%= f.input :adress,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "adress" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :role,
-                collection: ["Doctor", "Patient"],
-                required: true,
-                autofocus: true,
-                input_html: { "data-controller" => "speciality", "data-action" => "change->speciality#showOrHideSpeciality" } %>
-    <%= f.input :speciality,
-            collection: ["Psychologue", "Psychatre"] %>
+      <div class="input-signup">
+        <div class="container2-signup">
 
+          <div class="input-pair">
+            <%= f.input :first_name, label: false,
+                        required: true,
+                        autofocus: true,
+                        placeholder: "First name",
+                        input_html: { autocomplete: "first_name" } %>
+            <%= f.input :last_name, label: false,
+                        required: true,
+                        autofocus: true,
+                        placeholder: "Last name",
+                        input_html: { autocomplete: "last_name" } %>
+          </div>
+
+          <div class="input-pair">
+            <%= f.input :age, label: false,
+                        required: true,
+                        autofocus: true,
+                        placeholder: "Age",
+                        input_html: { autocomplete: "age" } %>
+            <%= f.input :number, label: false,
+                        required: true,
+                        autofocus: true,
+                        placeholder: "Number",
+                        input_html: { autocomplete: "number" } %>
+          </div>
+
+          <div class="input-pair">
+            <%= f.input :adress, label: false,
+                        required: true,
+                        autofocus: true,
+                        placeholder: "Address",
+                        input_html: { autocomplete: "address" } %>
+            <%= f.input :email, label: false,
+                        required: true,
+                        autofocus: true,
+                        placeholder: "Email",
+                        input_html: { autocomplete: "email" } %>
+          </div>
+
+          <div class="input-pair">
+            <%= f.input :password, label: false,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        placeholder: "Password",
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, label: false,
+                        required: true,
+                        placeholder: "Password confirmation",
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+        </div>
+
+        <%= f.input :role, label: false,
+                    collection: ["Doctor", "Patient"],
+                    required: true,
+                    autofocus: true,
+                    placeholder: "Role",
+                    input_html: { "data-controller" => "speciality", "data-action" => "change->speciality#showOrHideSpeciality" } %>
+        <%= f.input :speciality, label: false,
+                    placeholder: "Speciality",
+                    collection: ["Psychologist", "Psychiatrist"] %>
+
+        <%= f.button :submit, "Sign up", class: "button-signup" %>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
