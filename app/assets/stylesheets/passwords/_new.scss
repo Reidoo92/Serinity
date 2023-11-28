@@ -1,0 +1,52 @@
+.button-login {
+  background-color: #A358CE;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #9B54C4;
+  transition: box-shadow 0.3s;
+  padding: 7px 12px;
+  text-decoration: none;
+  color:  white;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-login:hover {
+  background-color: darken(#B688D0, 20%);
+}
+
+.button-forgot {
+  padding-bottom: 60px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.button-forgot:hover {
+  color: #B688D0;
+}
+
+.container-forgot {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.h2-forgot {
+  color: white;
+  padding-bottom: 15px;
+}
+
+.input-forgot input{
+  border-radius: 6px;
+}
+
+.input-forgot input:focus {
+  box-shadow: 0 0 5px #9B54C4;
+}
