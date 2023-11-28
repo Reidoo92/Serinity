@@ -8,5 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
 User.create("doctor@gmail.com", "Galaad", "Michaud", 24, "0612345678", "123 rue de la paix", "Gynecologue", :doctor)
 User.create("patient@gmail.com", "Gilson", "Djassan", 25, "0687654321", "321 rue de la paix", "Harcélement scolaire", :patient)
