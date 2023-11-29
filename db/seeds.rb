@@ -10,4 +10,5 @@
 p "Creating Seed"
 User.create(email: "galaad@gmail.com", password: "galaad@gmail.com", first_name: "Galaad", last_name: "Michaud", age: 24, number: "0612345678", adress: "123 rue de la paix", speciality: "Gynecologue", role: "doctor")
 User.create(email: "gilson@gmail.com", password: "gilson@gmail.com", first_name: "Gilson", last_name: "Djassan", age: 25, number: "0687654321", adress: "321 rue de la paix", role: "patient")
+User.create(email: "laid@gmail.com", password: "laid@gmail.com", first_name: "Laid", last_name: "Sereir", age: 25, number: "0798765432", adress: "213 rue de la paix", role: "patient")
 p "Seed created"

@@ -1,0 +1,11 @@
+<% if current_user.role == 'patient' %>
+  <% @doctors.each do |doctor| %>
+    <%=  link_to doctor.last_name, user_path(doctor.id) %>
+  <% end %>
+<% end %>
+
+<% if current_user.role == 'doctor' %>
+  <% @patients.each do |patient| %>
+     <%=  link_to patient.last_name, user_path(patient.id) %>
+  <% end %>
+<% end %>
