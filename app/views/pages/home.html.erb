@@ -14,25 +14,22 @@
 
 
         <div class="home_page">
-          <h1>Pages#home</h1>
+          <h1>Serinity</h1>
 
 
     <% end %>
 
+
+
+<!-- ---------------- Dashboard du docteur ---------------- -->
+
     <% if @user.present? %>
       <% if @user.role == "doctor" %>
 
-
-
         <div class="dashboard">
 
-
           <!-- Div pour la Navbar de gauche-->
-
-        <%= render "shared/nav-dashboard" %>
-
-  <!-- ---------------- contenu de la home du dashboard ---------------- -->
-
+          <%= render "shared/nav-dashboard" %>
 
           <div class="dashboard-container">
 
@@ -163,11 +160,11 @@
 
 
 
-  <!-- ---------------- Home patient et non connecter ---------------- -->
+<!-- ---------------- Home patient et non connecter ---------------- -->
 
 
       <% if @user.role == "patient" %>
-        <div>
+        <div class="test-patient">
           <p>CODE HOME PATIENT</p>
         </div>
       <% end %>
