@@ -1,11 +1,6 @@
 <div data-controller="navbar" class="position-burger">
   <div  data-navbar-target="togglableElement" id="mySidenav" class="sidenav">
-    <div  class="burger-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <a id="closeBtn" href="#" class="close" >x</a>
+    <p id="closeBtn" class="close" data-action="click->navbar#closeMenu">x</p>
     <ul>
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
       <li><a href="#">Home</a></li>
@@ -16,7 +11,7 @@
     </ul>
   </div>
 
-  <a href="#" id="openBtn" data-action="click->navbar#openMenu" >
+  <a href="#" id="openBtn" data-action="click->navbar#openMenu">
     <span  class="burger-icon">
       <span></span>
       <span></span>
