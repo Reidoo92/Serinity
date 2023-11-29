@@ -1,12 +1,22 @@
 <body class="no-navbar">
-     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-   <%= render "shared/menu-burger" %>
+
   <div>
     <% unless @user.present? && @user.role == "doctor" %>
+
+      <%= render "shared/menu-burger" %>
       <%= image_tag("bgc_home.jpg", class: "background-image", alt: "Background for video games") %>
       <div class="bgc_opacity"></div>
-      <div class="home_page">
-        <h1>Pages#home</h1>
+
+
+        <div class="btn-rdv">
+          <%= link_to "Prendre rendez-vous", "#", class: "btn btn-primary" %>
+        </div>
+
+
+        <div class="home_page">
+          <h1>Pages#home</h1>
+
+
     <% end %>
 
     <% if @user.present? %>

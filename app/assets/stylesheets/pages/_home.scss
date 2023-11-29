@@ -31,6 +31,28 @@
   text-align: center; /* Alignement du texte dans le centre */
 }
 
+.btn-rdv {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.btn-rdv a {
+  border-radius: 8px;
+  opacity: 0.7;
+  overflow: hidden; // Assure que le contenu débordant n'est pas visible
+  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  transition: transform 0.3s ease;
+}
+
+.btn-rdv a:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
 /*--------------------- Dashboard ---------------------*/
 
 .dashboard {
