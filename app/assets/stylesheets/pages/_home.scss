@@ -191,6 +191,19 @@
   margin-top: 48px;
 }
 
+.img-rotation {
+  animation: rotateAnimation 45s linear infinite; /* 4s de durée, ajustez selon vos besoins */
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .list-stats {
   width: 300px;
 }
