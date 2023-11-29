@@ -36,8 +36,13 @@
 .dashboard {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 56px;
   background-color: white;
+}
+
+.li-space {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*--------------------- Navbar de gauche ---------------------*/
@@ -66,7 +71,6 @@
   display: flex;
   flex-direction: column;
   width: 168px;
-  border-radius: 8px;
   gap: 8px;
   margin-left: 24px;
 }
@@ -76,10 +80,11 @@
   color: black;
   size: 100%;
   padding: 2px 24px;
+  border-radius: 8px;
 }
 
 .link-left-nav a:hover {
-  background-color: rgba($color: #a7face, $alpha: 0.5);
+  background-color: rgba($color: #a7face, $alpha: 0.3);
 }
 
 /*--------------------- Dashboard Top ---------------------*/
@@ -88,11 +93,6 @@
   display: flex;
   flex-direction: column;
   margin: 50px;
-}
-
-.li-space {
-  display: flex;
-  justify-content: space-between;
 }
 
 .pourcent-up {
@@ -114,10 +114,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba($color: #c9f0ff, $alpha: 0.6);
+  background-color: rgba($color: #c9f0ff, $alpha: 0.3);
   width: 220px;
   border-radius: 16px;
   padding: 10px;
+  overflow: hidden; // Assure que le contenu débordant n'est pas visible
+  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  transition: transform 0.3s ease;
+}
+
+.card-top:hover {
+  transform: scale(1.2);
 }
 
 .chiffre-affaire {
@@ -134,15 +141,21 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 50px;
-  height: 300px;
   gap: 50px;
 }
 
 .patient-type-card {
-  background-color: rgba($color: #c9f0ff, $alpha: 0.6);
+  background-color: rgba($color: #c9f0ff, $alpha: 0.3);
   width: 650px;
   border-radius: 32px;
   padding: 20px;
+  overflow: hidden; // Assure que le contenu débordant n'est pas visible
+  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  transition: transform 0.3s ease;
+}
+
+.patient-type-card:hover {
+  transform: scale(1.07);
 }
 
 .patient-container {
@@ -159,9 +172,16 @@
 }
 
 .week-reservation-card {
-  background-color: rgba($color: #c9f0ff, $alpha: 0.6);
+  background-color: rgba($color: #c9f0ff, $alpha: 0.3);
   border-radius: 32px;
   padding: 20px;
+  overflow: hidden; // Assure que le contenu débordant n'est pas visible
+  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  transition: transform 0.3s ease;
+}
+
+.week-reservation-card:hover {
+  transform: scale(1.08);
 }
 
 .li-week {
