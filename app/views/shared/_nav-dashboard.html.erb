@@ -1,0 +1,16 @@
+<div class="left-navbar">
+  <div class="pp-avatar">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+    <%= "Dr. #{@user.last_name}" %>
+  </div>
+
+  <div class="nav-dashboard">
+    <h6>Dashboard</h6>
+    <div class="link-left-nav">
+      <%= link_to "Patients" %>
+      <%= link_to "Mes rendez-vous à venir" %>
+      <%= link_to "Historique" %>
+      <%= link_to "Mes paiements" %>
+    </div>
+  </div>
+</div>

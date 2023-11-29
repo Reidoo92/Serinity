@@ -1,12 +1,12 @@
 .button-login {
-  background-color: #A358CE;
+  background-color: #a358ce;
   border: none;
   border-radius: 6px;
-  box-shadow: 0 0 5px #9B54C4;
+  box-shadow: 0 0 5px #9b54c4;
   transition: box-shadow 0.3s;
   padding: 7px 12px;
   text-decoration: none;
-  color:  white;
+  color: white;
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
@@ -16,7 +16,7 @@
 }
 
 .button-login:hover {
-  background-color: darken(#B688D0, 20%);
+  background-color: darken(#b688d0, 20%);
 }
 
 .h2-login {
@@ -24,11 +24,11 @@
   padding-bottom: 15px;
 }
 
-.input-login input{
+.input-login input {
   border-radius: 6px;
 }
 .input-login input:focus {
-  box-shadow: 0 0 5px #9B54C4;
+  box-shadow: 0 0 5px #9b54c4;
 }
 
 .container-login {
@@ -36,7 +36,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 body {
@@ -51,7 +50,7 @@ body {
 }
 
 .button-forgot:hover {
-  color: #B688D0;
+  color: #b688d0;
 }
 
 body.no-navbar .navbar {

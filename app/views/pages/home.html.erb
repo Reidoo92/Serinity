@@ -13,46 +13,7 @@
 
         <!-- Div pour la Navbar de gauche-->
 
-        <div class="left-navbar">
-
-          <div class="pp-avatar">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-            <%= "Dr. #{@user.last_name}" %>
-          </div>
-          <div class="nav-dashboard">
-            <h6>Dashboard</h6>
-
-            <div class="link-left-nav">
-
-              <%= link_to "Patients" %>
-
-              <%= link_to "Mes rendez-vous à venir" %>
-
-              <%= link_to "Historique" %>
-
-              <%= link_to "Mes payement" %>
-
-            </div>
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
+<%= render "shared/nav-dashboard" %>
 
 <!-- ---------------- contenu de la home du dashboard ---------------- -->
 
@@ -88,7 +49,7 @@
           </div>
 
 
-        <!-- Div pour les 2 carte du milieux de la page "Catégorie de patients" et "consultation de la semaine" -->
+        <!-- Div pour les 2 carte du milieux "Catégorie de patients" et "consultation de la semaine" -->
           <div class="midle-container">
 
             <div class="patient-type-card">
@@ -157,10 +118,7 @@
                 </ul>
               </div>
             </div>
-
           </div>
-
-
 
 
           <!-- Div pour l'activité du mois -->
