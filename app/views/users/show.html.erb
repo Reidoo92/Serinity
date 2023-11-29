@@ -2,9 +2,16 @@
 
 
   <%= simple_form_for [@user, @reservation] do |f|%>
-<%= f.input :date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-<%= f.submit "submit" %>
+
+  <%= f.input :date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+  <%= f.submit "submit" %>
 
   <% end %>
+
+<%# <%if user.role == "doctor"  %>
+
+
+<%#
+<%end  %>

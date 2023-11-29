@@ -1,9 +1,9 @@
 
   <%= simple_form_for @reservation do |f|%>
-<%= f.input :date,
+  <%= f.input :date,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
 
-    <%= link_to "Valider", root_path(@reservation), class: "new-button"%>
+  <%= link_to "Valider", root_path(@reservation), class: "new-button"%>
 
   <% end %>

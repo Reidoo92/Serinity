@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def index
+    @doctors = User.where(role: 'doctor')
+    @patients = User.where(role: 'patient')
+    @role = current_user.role
+  end
+
   private
 
   def user_params
