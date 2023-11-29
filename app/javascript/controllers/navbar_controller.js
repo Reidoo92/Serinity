@@ -4,14 +4,18 @@ export default class extends Controller {
   static targets = ["togglableElement"];
 
   connect() {
-
-    console.log("connected")
+    console.log("connected");
   }
 
   openMenu(event) {
-    event.preventDefault()
-    console.log(this.togglableElementTarget)
+    event.preventDefault();
+    console.log(this.togglableElementTarget);
     this.togglableElementTarget.classList.add("active");
   }
 
+  closeMenu(event) {
+    event.preventDefault();
+    console.log(this.togglableElementTarget);
+    this.togglableElementTarget.classList.remove("active");
+  }
 }
