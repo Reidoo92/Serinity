@@ -1,7 +1,7 @@
 <body class="no-navbar">
   <div>
     <% unless @user.present? && @user.role == "doctor" %>
-      <%= image_tag("bgc_home", class: "background-image", alt: "Background for video games") %>
+      <%= image_tag("bgc_home.jpg", class: "background-image", alt: "Background for video games") %>
       <div class="bgc_opacity"></div>
       <div class="home_page">
         <h1>Pages#home</h1>
