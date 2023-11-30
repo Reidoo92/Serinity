@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    raise
     @reservations = Reservation.all
   end
 
@@ -8,16 +9,34 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    doctor = User.find(params[:user_id])
-    patient = current_user
+
+    if current_user.role == "doctor"
+      doctor = current_user
+      patient = User.find(params[:user_id])
+    else
+      doctor = User.find(params[:user_id])
+      patient = current_user
+    end
+
     reservation = Reservation.new(reservation_params)
     reservation.doctor = doctor
     reservation.patient = patient
+
     if reservation.save!
+      doctor.update(balance: doctor.balance + reservation.price)
       redirect_to root_path, notice: "Your reservation was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
+
+  end
+
+  def upcoming
+    @reservations = Reservation.where('date >= ?', Date.today)
+  end
+
+  def past
+    @reservations = Reservation.where('date < ?', Date.today)
   end
 
   def destroy

@@ -1,0 +1,6 @@
+<% @reservations.select { |reservation| reservation.date >= Date.today }.each do |reservation| %>
+
+    <%= reservation.patient.last_name %>
+    <%= reservation.date %>
+
+<% end %>

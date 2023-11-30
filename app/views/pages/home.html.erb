@@ -35,29 +35,44 @@
             <!-- Div pour les 4 carte du haut du dashboard de Patient à Chiffre d'affaires -->
             <div class="card-container">
 
-              <div class="card-top">
-                <h3><strong>Patients</strong></h1>
-                <strong><%= User.where(role: "patient").count %></strong>
-              </div>
+              <%= link_to users_path do %>
 
-              <div class="card-top">
-                <h3><strong>Consultations précédentes</strong></h3>
-                <p><strong>57</strong></p>
-              </div>
-
-              <div class="card-top">
-                <h3><strong>Prochaines consultations</strong></h3>
-                <p><strong>28</strong></p>
-              </div>
-
-              <div class="card-top">
-                <h3><strong>Chiffre d'affaires</strong></h3>
-                <div class="chiffre-affaire">
-                  <p><strong>3783€</strong><p>
-                  <p class="pourcent-up">+7,03%</p>
+                <div class="card-top">
+                  <h3><strong>Patients</strong></h1>
+                  <strong><%= User.where(role: "patient").count %></strong>
                 </div>
-              </div>
 
+              <% end %>
+
+              <%= link_to upcoming_reservations_path(current_user) do %>
+
+                <div class="card-top">
+                  <h3><strong>Consultations précédentes</strong></h3>
+                  <p><strong>57</strong></p>
+                </div>
+
+               <% end %>
+
+              <%= link_to past_reservations_path(current_user)  do %>
+
+                <div class="card-top">
+                  <h3><strong>Prochaines consultations</strong></h3>
+                  <p><strong>28</strong></p>
+                </div>
+
+               <% end %>
+
+              <%= link_to profiles_path do %>
+
+                <div class="card-top">
+                  <h3><strong>Chiffre d'affaires</strong></h3>
+                  <div class="chiffre-affaire">
+                    <p><strong>3783€</strong><p>
+                    <p class="pourcent-up">+7,03%</p>
+                  </div>
+                </div>
+
+               <% end %>
             </div>
 
 

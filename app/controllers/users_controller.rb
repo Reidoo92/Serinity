@@ -14,9 +14,13 @@ class UsersController < ApplicationController
     @role = current_user.role
   end
 
+  def profiles
+    @doctor = current_user # Supposons que le docteur est l'utilisateur actuellement connecté
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :age, :number, :address, :category, :speciality, :role)
+    params.require(:user).permit(:first_name, :last_name, :age, :number, :address, :category, :speciality, :role, :balance)
   end
 end
