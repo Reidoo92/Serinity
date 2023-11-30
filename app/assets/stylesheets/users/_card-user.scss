@@ -33,6 +33,18 @@
   transform: scale(1.1);
 }
 
+.index-card-show {
+  background-color: rgba($color: #e7bac9, $alpha: 0.3);
+  display: flex;
+  flex-direction: row;
+  height: 700px;
+  width: 950px;
+  border-radius: 16px;
+  overflow: hidden; // Assure que le contenu débordant n'est pas visible
+  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  transition: transform 0.3s ease;
+}
+
 .position-info-card {
   display: flex;
   flex-direction: row;

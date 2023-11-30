@@ -1,66 +1,54 @@
 .container2 {
   display: flex;
-  background-color: red;
-  height: 35vh;
-  padding: 20px 20px;
+  flex-direction: column;
+  gap: 100px;
+  background-color: white;
+  height: 100vh !important;
+  padding-top: 80px;
+  padding: 80px 60px;
+}
+
+.container-bot-show {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 
 .description-profil {
-  background-color: green;
-  height: 100%;
   width: 50%;
-  margin-right: 10px;
   border-radius: 10px;
 }
 
 .reservation {
-  background-color: green;
-  height: 100%;
+  display: flex;
+  flex-direction: row;
   width: 50%;
   margin-left: 10px;
   border-radius: 10px;
 }
 
-.description-profil p {
-  text-align: center;
-}
-
 .reservation {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 44px;
 }
 
-.calendar {
-  height: 100%;
-  width: 50%;
-  border-radius: 10px 0 0 10px;
+.calender {
+  height: 339px;
 }
 
-.card-infos-reservation{
+.input-right {
   display: flex;
   flex-direction: column;
-  width: 60%;
   justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  border: 1px;
+  padding-right: 58px;
+  gap: 40px;
 }
 
-.infos-reservation{
-  padding: 10px 0px;
-}
-
-.input-calendar {
-  background-color: pink;
+.boutton-valider {
   height: 64px;
   width: 320px;
   border-radius: 10px;
-}
-
-.button-valider {
-  background-color: purple;
-  height: 64px;
-  width: 320px;
-  box-sizing: border-box;
-  padding: 10px;
-  border-radius: 10px;
+  border: none;
 }
