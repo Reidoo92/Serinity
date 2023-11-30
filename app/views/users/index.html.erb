@@ -8,6 +8,11 @@
 
     <div class="dashboard-index">
 
+       <%= render "shared/nav-dashboard" %>
+
+      <div class="index-container">
+
+
       <div class="search-bar">
         <%= image_tag("search_barre.png") %>
       </div>
@@ -17,31 +22,32 @@
 
         <div class="index-card-container">
 
-          <% @patients.each do |patient| %>
-            <div class="index-card">
+            <% @patients.each do |patient| %>
+              <div class="index-card">
 
-              <%= link_to user_path(patient.id) do %>
+                <%= link_to user_path(patient.id) do %>
 
-                <%= image_tag("pp_default.png") %>
+                  <%= image_tag("pp_default.png") %>
 
-                <div class="position-info-card">
+                  <div class="position-info-card">
 
-                  <div class="primary-info-card">
-                    <%= link_to patient.last_name, user_path(patient.id) %>
-                    <%= link_to patient.first_name, user_path(patient.id) %>
-                    <%= link_to patient.age, user_path(patient.id) %>
+                    <div class="primary-info-card">
+                      <%= link_to patient.last_name, user_path(patient.id) %>
+                      <%= link_to patient.first_name, user_path(patient.id) %>
+                      <%= link_to patient.age, user_path(patient.id) %>
+                    </div>
+
+                    <div class="secondary-info-card">
+                      <%= link_to patient.adress, user_path(patient.id) %>
+                      <%= link_to patient.number, user_path(patient.id) %>
+                    </div>
                   </div>
 
-                  <div class="secondary-info-card">
-                    <%= link_to patient.adress, user_path(patient.id) %>
-                    <%= link_to patient.number, user_path(patient.id) %>
-                  </div>
-                </div>
+                <% end %>
+              </div>
 
-              <% end %>
-            </div>
-
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

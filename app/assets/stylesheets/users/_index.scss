@@ -1,9 +1,15 @@
 .dashboard-index {
   background-color: white;
   height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
-
+.index-container {
+  display: flex;
+  flex-direction: column;
+  
+}
 
 .search-bar {
   display: flex;
