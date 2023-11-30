@@ -1,11 +1,78 @@
-<% if current_user.role == 'patient' %>
-  <% @doctors.each do |doctor| %>
-    <%=  link_to doctor.last_name, user_path(doctor.id) %>
-  <% end %>
-<% end %>
+<body class="no-navbar">
 
-<% if current_user.role == 'doctor' %>
-  <% @patients.each do |patient| %>
-     <%=  link_to patient.last_name, user_path(patient.id) %>
+
+<!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
+
+
+  <% if current_user.role == 'doctor' %>
+
+    <div class="dashboard-index">
+
+      <div class="search-bar">
+        <%= image_tag("search_barre.png") %>
+      </div>
+
+
+      <div class="index-card-containe-positionr">
+
+        <div class="index-card-container">
+
+          <% @patients.each do |patient| %>
+            <div class="index-card">
+
+              <%= link_to user_path(patient.id) do %>
+
+                <%= image_tag("pp_default.png") %>
+
+                <div class="position-info-card">
+
+                  <div class="primary-info-card">
+                    <%= link_to patient.last_name, user_path(patient.id) %>
+                    <%= link_to patient.first_name, user_path(patient.id) %>
+                    <%= link_to patient.age, user_path(patient.id) %>
+                  </div>
+
+                  <div class="secondary-info-card">
+                    <%= link_to patient.adress, user_path(patient.id) %>
+                    <%= link_to patient.number, user_path(patient.id) %>
+                  </div>
+                </div>
+
+              <% end %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ------------------------------- Index qui permet au patient de voire tous les docteurs ------------------------------- -->
+
+
+  <% if current_user.role == 'patient' %>
+    <% @doctors.each do |doctor| %>
+      <%=  link_to doctor.last_name, user_path(doctor.id) %>
+    <% end %>
+  <% end %>
+</body>
