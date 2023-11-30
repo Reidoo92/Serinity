@@ -1,0 +1,66 @@
+.container2 {
+  display: flex;
+  background-color: red;
+  height: 35vh;
+  padding: 20px 20px;
+}
+
+.description-profil {
+  background-color: green;
+  height: 100%;
+  width: 50%;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.reservation {
+  background-color: green;
+  height: 100%;
+  width: 50%;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.description-profil p {
+  text-align: center;
+}
+
+.reservation {
+  display: flex;
+}
+
+.calendar {
+  height: 100%;
+  width: 50%;
+  border-radius: 10px 0 0 10px;
+}
+
+.card-infos-reservation{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px;
+}
+
+.infos-reservation{
+  padding: 10px 0px;
+}
+
+.input-calendar {
+  background-color: pink;
+  height: 64px;
+  width: 320px;
+  border-radius: 10px;
+}
+
+.button-valider {
+  background-color: purple;
+  height: 64px;
+  width: 320px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+}
