@@ -1,12 +1,20 @@
-<h1>Show User <%= @user.id %></h1>
+<div class="container2">
+  <div class="description-profil">
+    <p>description du profil</p>
+  </div>
+
+  <div class="reservation">
+
+
 
 
   <%= simple_form_for [@user, @reservation] do |f|%>
 
   <%= f.input :date,
               as: :string,
-              input_html: { data: { controller: "datepicker" } } %>
-  <%= f.submit "submit" %>
+              input_html: { data: { controller: "datepicker" }, hidden: true },
+               label: "Choisir le rendez-vous" %>
+  <%= f.submit "Valider le rendez-vous", class:"button-valider" %>
 
   <% end %>
 
@@ -15,3 +23,16 @@
 
 <%#
 <%end  %>
+
+    <!--<div class="card-infos-reservation">
+      <div class="infos-reservation">
+        <%= text_field_tag 'djassan', nil, class: 'input-calendar', placeholder: 'Entrez votre texte ici' %>
+      </div>
+      <div class="infos-reservation">
+        <button class="button-valider">Valider son rendez-vous</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+-->
