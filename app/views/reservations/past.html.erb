@@ -1,6 +1,40 @@
-<% @reservations.select { |reservation| reservation.date < Date.today }.each do |reservation| %>
+<body class="no-navbar">
 
-    <%= reservation.patient.last_name %>
-    <%= reservation.date %>
+  <div class="dashboard-index">
+    <%= render "shared/nav-dashboard" %>
 
-<% end %>
+    <div class="index-container">
+
+      <div class="search-bar">
+        <%= image_tag("search_barre.png") %>
+      </div>
+
+      <div class="index-card-containe-positionr">
+
+        <div class="index-card-container">
+          <% @reservations.select { |reservation| reservation.date < Date.today }.each do |reservation| %>
+            <div class="index-card">
+              <%= link_to user_path(reservation.patient.id) do %>
+                <%= image_tag("pp_default.png") %>
+                <div class="position-info-card">
+                  <div class="primary-info-card">
+                    <%= link_to reservation.patient.last_name, user_path(reservation.patient.id) %>
+                    <%= link_to reservation.patient.first_name, user_path(reservation.patient.id) %>
+                    <%= link_to reservation.patient.age, user_path(reservation.patient.id) %>
+                  </div>
+                  <div class="secondary-info-card">
+                    <%= link_to reservation.date, user_path(reservation.patient.id) %>
+                    <%= link_to reservation.patient.number, user_path(reservation.patient.id) %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>

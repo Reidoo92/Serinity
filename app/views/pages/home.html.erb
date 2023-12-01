@@ -4,7 +4,7 @@
     <% unless @user.present? && @user.role == "doctor" %>
 
       <%= render "shared/menu-burger" %>
-      <%= image_tag("bgc_home.jpg", class: "background-image", alt: "Background for video games") %>
+      <%= image_tag("bgc_home.jpg", class: "background-image", alt: "") %>
       <div class="bgc_opacity"></div>
 
 
@@ -44,7 +44,7 @@
 
               <% end %>
 
-              <%= link_to upcoming_reservations_path(current_user) do %>
+              <%= link_to past_reservations_path(current_user) do %>
 
                 <div class="card-top">
                   <h3><strong>Consultations précédentes</strong></h3>
@@ -53,7 +53,7 @@
 
                <% end %>
 
-              <%= link_to past_reservations_path(current_user)  do %>
+              <%= link_to upcoming_reservations_path(current_user)  do %>
 
                 <div class="card-top">
                   <h3><strong>Prochaines consultations</strong></h3>
