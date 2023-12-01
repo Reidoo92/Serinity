@@ -1,6 +1,12 @@
 <div class="left-navbar">
   <div class="pp-avatar">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+  <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+
+  <% if current_user.photo.attached?  %>
+          <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
+        <% else %>
+          <%= image_tag("pp_default.png", class: "avatar") %>
+        <% end %>
     <%= "Dr #{current_user.last_name}" %>
   </div>
 
@@ -18,7 +24,7 @@
       <%= link_to "Historique" , past_reservations_path(current_user) %>
 
       <%= link_to "Mes paiements", profiles_path %>
-      
+
       <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
     </div>
   </div>

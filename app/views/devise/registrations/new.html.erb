@@ -61,7 +61,7 @@
         </div>
 
         <%= f.input :role, label: false,
-                    collection: ["Doctor", "Patient"],
+                    collection: ["doctor", "patient"],
                     required: true,
                     autofocus: true,
                     placeholder: "Role",
@@ -69,6 +69,8 @@
         <%= f.input :speciality, label: false,
                     placeholder: "Speciality",
                     collection: ["Psychologist", "Psychiatrist"] %>
+
+        <%= f.input :photo, as: :file %>
 
         <%= f.button :submit, "Sign up", class: "button-signup" %>
       <% end %>

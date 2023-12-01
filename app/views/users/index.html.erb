@@ -1,3 +1,5 @@
+require "open-uri"
+
 <body class="no-navbar">
 
   <% if current_user.role == 'doctor' %>
@@ -24,7 +26,11 @@
 
                 <%= link_to user_path(patient.id) do %>
 
-                  <%= image_tag("pp_default.png") %>
+                  <% if patient.photo.attached?  %>
+                    <%= cl_image_tag patient.photo.key, crop: :fill %>
+                  <% else %>
+                    <%= image_tag("pp_default.png") %>
+                  <% end %>
 
                   <div class="position-info-card">
 
@@ -78,7 +84,11 @@
 
                 <%= link_to user_path(doctor.id) do %>
 
-                  <%= image_tag("pp_default.png") %>
+                  <% if doctor.photo.attached?  %>
+                    <%= cl_image_tag doctor.photo.key, crop: :fill %>
+                  <% else %>
+                    <%= image_tag("pp_default.png") %>
+                  <% end %>
 
                   <div class="position-info-card">
 
