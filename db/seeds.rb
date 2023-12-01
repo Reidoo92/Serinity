@@ -9,8 +9,8 @@
 #   end
 
 p "Cleaning database..."
-User.destroy_all
 Reservation.destroy_all
+User.destroy_all
 p "Database clean..."
 
 p "Creating Doctor..."
