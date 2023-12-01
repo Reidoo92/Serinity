@@ -1,6 +1,5 @@
 class ReservationsController < ApplicationController
   def index
-    raise
     @reservations = Reservation.all
   end
 
