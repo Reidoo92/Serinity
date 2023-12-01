@@ -1,0 +1,44 @@
+.left-navbar {
+  width: 232px;
+  border-right: 2px solid rgba($color: black, $alpha: 0.1);
+}
+
+.pp-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 10px;
+}
+
+.nav-dashboard h6 {
+  opacity: 0.6;
+  margin-left: 16px;
+}
+
+.label-link-dashboard a {
+  text-decoration: none;
+  color: rgba($color: black, $alpha: 0.6);
+}
+
+.link-left-nav {
+  display: flex;
+  flex-direction: column;
+  width: 168px;
+  gap: 8px;
+  margin-left: 24px;
+}
+
+.link-left-nav a {
+  text-decoration: none;
+  color: black;
+  size: 100%;
+  padding: 2px 24px;
+  border-radius: 8px;
+}
+
+.link-left-nav a:hover {
+  background-color: rgba($color: #a7face, $alpha: 0.3);
+}

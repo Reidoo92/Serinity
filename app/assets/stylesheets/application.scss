@@ -9,15 +9,14 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar-dashboard";
 @import "pages/index";
-
 @import "pages/form";
-@import "users/new";
+
 @import "registrations/new";
 @import "passwords/new";
 
-
+@import "users/new";
 @import "users/show";
 @import "users/index";
 @import "users/card-user";
-
