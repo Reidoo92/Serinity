@@ -54,7 +54,12 @@
 .primary-info-card {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  justify-content: space-between;
+}
+
+.primary-info-card p {
+  margin: 0px !important;
+  padding: 5px 5px;
 }
 
 .primary-info-card a {
