@@ -9,8 +9,8 @@
 #   end
 
 p "Cleaning database..."
-Restaurant.destroy_all
 User.destroy_all
+Reservation.destroy_all
 p "Database clean..."
 
 p "Creating Doctor..."
@@ -30,28 +30,29 @@ User.create(email: "ahmed@gmail.com", password: "ahmed@gmail.com", first_name: "
 User.create(email: "fred@gmail.com", password: "fred@gmail.com", first_name: "Fred", last_name: "Code", age: 26, number: "0796543532", adress: "546 rue de la paix, 77300", role: "patient")
 User.create(email: "andre@gmail.com", password: "andre@gmail.com", first_name: "Andre", last_name: "Bresil", age: 24, number: "0783903345", adress: "7 rue de la paix, 33000", role: "patient")
 User.create(email: "francois@gmail.com", password: "francois@gmail.com", first_name: "François", last_name: "Wayne", age: 43, number: "0676453003", adress: "98 rue de la paix, 12006", role: "patient")
-User.create(email: "dalina@gmail.com", password: "dalina@gmail.com", first_name: "Dalina", last_name: "Lesourd", age: 37, number: "0628319321", adress: "121 rue de la paix, 340006", role: "patient")
+User.create(email: "dalina@gmail.com", password: "dalina@gmail.com", first_name: "Dalina", last_name: "Lesourd", age: 37, number: "0628319321", adress: "121 rue de la paix, 34006", role: "patient")
+User.create(email: "thomas@gmail.com", password: "thomas@gmail.com", first_name: "Thomas", last_name: "Traore", age: 99, number: "0609675732", adress: "666 rue de la paix, 12006", role: "patient")
 
 p "Creating Reservation for galaad@gmail.com..."
 
-Reservation.create(date: "2000-12-12", price: 50, doctor_id: 22, patient_id: 23)
-Reservation.create(date: "2000-11-30", price: 50, doctor_id: 22, patient_id: 24)
-Reservation.create(date: "2000-08-28", price: 50, doctor_id: 22, patient_id: 25)
-Reservation.create(date: "2000-02-04", price: 50, doctor_id: 22, patient_id: 26)
-Reservation.create(date: "2025-12-09", price: 50, doctor_id: 22, patient_id: 27)
-Reservation.create(date: "2025-10-30", price: 50, doctor_id: 22, patient_id: 28)
-Reservation.create(date: "2025-04-25", price: 50, doctor_id: 22, patient_id: 29)
-Reservation.create(date: "2025-06-23", price: 50, doctor_id: 22, patient_id: 35)
+Reservation.create(date: "2000-12-12", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[0])
+Reservation.create(date: "2000-11-30", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[1])
+Reservation.create(date: "2000-08-28", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[2])
+Reservation.create(date: "2000-02-04", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[3])
+Reservation.create(date: "2025-12-09", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[4])
+Reservation.create(date: "2025-10-30", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[5])
+Reservation.create(date: "2025-04-25", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[6])
+Reservation.create(date: "2025-06-23", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[7])
 
 p "Creating Reservation for remi@gmail.com..."
 
-Reservation.create(date: "2000-12-12", price: 50, doctor_id: 30, patient_id: 23)
-Reservation.create(date: "2000-11-30", price: 50, doctor_id: 30, patient_id: 24)
-Reservation.create(date: "2000-08-28", price: 50, doctor_id: 30, patient_id: 25)
-Reservation.create(date: "2000-02-04", price: 50, doctor_id: 30, patient_id: 26)
-Reservation.create(date: "2025-12-09", price: 50, doctor_id: 30, patient_id: 27)
-Reservation.create(date: "2025-10-30", price: 50, doctor_id: 30, patient_id: 28)
-Reservation.create(date: "2025-04-25", price: 50, doctor_id: 30, patient_id: 29)
-Reservation.create(date: "2025-06-23", price: 50, doctor_id: 30, patient_id: 35)
-
+Reservation.create(date: "2000-12-12", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[0])
+Reservation.create(date: "2000-11-30", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[1])
+Reservation.create(date: "2000-08-28", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[2])
+Reservation.create(date: "2000-02-04", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[3])
+Reservation.create(date: "2025-12-09", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[4])
+Reservation.create(date: "2025-10-30", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[5])
+Reservation.create(date: "2025-04-25", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[6])
+Reservation.create(date: "2025-06-23", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[7])
+Reservation.create(date: "2027-06-23", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[8])
 p "Seed created!"
