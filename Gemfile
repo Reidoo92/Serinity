@@ -6,7 +6,11 @@ gem "devise"
 
 gem "faker"
 
+
 gem "cloudinary"
+
+gem "geocoder"
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"

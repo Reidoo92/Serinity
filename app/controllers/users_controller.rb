@@ -12,10 +12,21 @@ class UsersController < ApplicationController
     @doctors = User.where(role: 'doctor')
     @patients = User.where(role: 'patient')
     @role = current_user.role
+
+    if @role == 'patient'
+
+      @markers = @doctors.geocoded.map do |doctor|
+        {
+          lat: doctor.latitude,
+          lng: doctor.longitude
+        }
+      end
+    
+    end
   end
 
   def profiles
-    @doctor = current_user # Supposons que le docteur est l'utilisateur actuellement connecté
+    @doctor = current_user
   end
 
   private
