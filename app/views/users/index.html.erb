@@ -16,27 +16,24 @@
           <%= image_tag("search_barre.png") %>
         </div>
 
+        <h1>Patients</h1>
+
         <div class="index-card-containe-positionr">
 
           <div class="index-card-container">
             <% @patients.each do |patient| %>
               <div class="index-card">
 
-                <%= link_to user_path(patient.id) do %>
+                <%= link_to user_path(patient.id), class: "link-card-users" do %>
 
                   <%= image_tag("pp_default.png") %>
 
                   <div class="position-info-card">
 
-                    <div class="primary-info-card">
-                      <p><%= patient.last_name %></p>
-                      <p><%= patient.first_name %></p>
-                      <p><%= patient.age %></p>
-                    </div>
-
-                    <div class="secondary-info-card">
-                      <%= link_to patient.number, user_path(patient.id) %>
-                    </div>
+                    <p><%= patient.first_name %></p>
+                    <p><%= patient.last_name.capitalize %></p>
+                    <p><%= patient.age %> ans</p>
+                    <p><%= patient.number %></p>
 
                   </div>
                 <% end %>
@@ -51,6 +48,8 @@
 
 
 
+
+  <!-- ------------------------------- Index qui permet au patient de voire tous les docteurs ------------------------------- -->
 
 
 

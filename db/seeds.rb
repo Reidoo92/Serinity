@@ -33,26 +33,32 @@ User.create(email: "francois@gmail.com", password: "francois@gmail.com", first_n
 User.create(email: "dalina@gmail.com", password: "dalina@gmail.com", first_name: "Dalina", last_name: "Lesourd", age: 37, number: "0628319321", adress: "121 rue de la paix, 34006", role: "patient")
 User.create(email: "thomas@gmail.com", password: "thomas@gmail.com", first_name: "Thomas", last_name: "Traore", age: 99, number: "0609675732", adress: "666 rue de la paix, 12006", role: "patient")
 
-p "Creating Reservation for galaad@gmail.com..."
+p "Creating PAST Reservation for galaad@gmail.com..."
 
-Reservation.create(date: "2000-12-12", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[0])
-Reservation.create(date: "2000-11-30", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[1])
-Reservation.create(date: "2000-08-28", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[2])
-Reservation.create(date: "2000-02-04", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[3])
-Reservation.create(date: "2025-12-09", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[4])
-Reservation.create(date: "2025-10-30", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[5])
-Reservation.create(date: "2025-04-25", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[6])
-Reservation.create(date: "2025-06-23", price: 50, doctor_id: User.where(role: 'doctor').first, patient_id: User.where(role: 'patient')[7])
+Reservation.create(date: "2000-12-12", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[0].id)
+Reservation.create(date: "2000-11-30", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[1].id)
+Reservation.create(date: "2000-08-28", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[2].id)
+Reservation.create(date: "2000-02-04", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[3].id)
 
-p "Creating Reservation for remi@gmail.com..."
+p "Creating UPCOMING Reservation for galaad@gmail.com..."
 
-Reservation.create(date: "2000-12-12", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[0])
-Reservation.create(date: "2000-11-30", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[1])
-Reservation.create(date: "2000-08-28", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[2])
-Reservation.create(date: "2000-02-04", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[3])
-Reservation.create(date: "2025-12-09", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[4])
-Reservation.create(date: "2025-10-30", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[5])
-Reservation.create(date: "2025-04-25", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[6])
-Reservation.create(date: "2025-06-23", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[7])
-Reservation.create(date: "2027-06-23", price: 50, doctor_id: User.where(role: 'doctor').second, patient_id: User.where(role: 'patient')[8])
+Reservation.create(date: "2025-12-09", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[4].id)
+Reservation.create(date: "2025-10-30", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[5].id)
+Reservation.create(date: "2025-04-25", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[6].id)
+Reservation.create(date: "2025-06-23", price: 50, doctor_id: User.where(role: 'doctor').first.id, patient_id: User.where(role: 'patient')[7].id)
+
+p "Creating PAST Reservation for remi@gmail.com..."
+
+Reservation.create(date: "2000-12-12", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[0].id)
+Reservation.create(date: "2000-11-30", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[1].id)
+Reservation.create(date: "2000-08-28", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[2].id)
+Reservation.create(date: "2000-02-04", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[3].id)
+
+p "Creating UPCOMING Reservation for remi@gmail.com..."
+
+Reservation.create(date: "2025-12-09", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[4].id)
+Reservation.create(date: "2025-10-30", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[5].id)
+Reservation.create(date: "2025-04-25", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[6].id)
+Reservation.create(date: "2025-06-23", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[7].id)
+Reservation.create(date: "2027-06-23", price: 50, doctor_id: User.where(role: 'doctor').second.id, patient_id: User.where(role: 'patient')[8].id)
 p "Seed created!"

@@ -1,6 +1,5 @@
 class ReservationsController < ApplicationController
   def index
-    raise
     @reservations = Reservation.all
   end
 
@@ -32,11 +31,11 @@ class ReservationsController < ApplicationController
   end
 
   def upcoming
-    @reservations = Reservation.where('date >= ?', Date.today)
+    @reservations = Reservation.where(doctor_id: current_user).where("date >= ?", Date.today)
   end
 
   def past
-    @reservations = Reservation.where('date < ?', Date.today)
+    @reservations = Reservation.where(doctor_id: current_user).where("date <= ?", Date.today)
   end
 
   def destroy
