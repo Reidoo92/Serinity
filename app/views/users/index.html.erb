@@ -55,45 +55,48 @@
 
 
 
-  <% if current_user.role == 'patient' %>
 
-    <div class="dashboard-index">
+  <!-- ------------------------------- Index qui permet au patient de voire tous les docteurs ------------------------------- -->
 
-      <div class="index-container">
 
-        <div class="search-bar">
-          <%= image_tag("search_barre.png") %>
+ <% if current_user.role == 'patient' %>
+
+  <div class="dashboard-index">
+
+    <div class="index-container">
+
+      <div class="search-bar">
+        <%= image_tag("search_barre.png") %>
+      </div>
+
+      <div class="index-card-containe-positionr">
+        <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
-        <div class="index-card-containe-positionr">
-
-          <div class="index-card-container">
-            <% @doctors.each do |doctor| %>
-              <div class="index-card">
-
-                <%= link_to user_path(doctor.id) do %>
-
-                  <%= image_tag("pp_default.png") %>
-
-                  <div class="position-info-card">
-
-                    <div class="primary-info-card">
-                      <p><%= doctor.last_name %></p>
-                      <p><%= doctor.first_name %></p>
-                      <p><%= doctor.age %></p>
-                    </div>
-
-                    <div class="secondary-info-card">
-                      <%= link_to doctor.number, user_path(doctor.id) %>
-                    </div>
-
+      
+        <div class="index-card-container">
+          <% @doctors.each do |doctor| %>
+            <div class="index-card">
+              <%= link_to user_path(doctor.id) do %>
+                <%= image_tag("pp_default.png") %>
+                <div class="position-info-card">
+                  <div class="primary-info-card">
+                    <p><%= doctor.last_name %></p>
+                    <p><%= doctor.first_name %></p>
+                    <p><%= doctor.age %></p>
                   </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+                  <div class="secondary-info-card">
+                    <%= link_to doctor.number, user_path(doctor.id) %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 </body>
