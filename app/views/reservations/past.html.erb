@@ -12,7 +12,7 @@
       <div class="index-card-containe-positionr">
 
         <div class="index-card-container">
-          <% @reservations.select { |reservation| reservation.date < Date.today }.each do |reservation| %>
+          <% @reservations.each do |reservation| %>
             <div class="index-card">
               <%= link_to user_path(reservation.patient.id) do %>
                 <%= image_tag("pp_default.png") %>
