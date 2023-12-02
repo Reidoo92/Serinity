@@ -47,19 +47,34 @@
 
 .link-card-users {
   display: flex;
+
+  width: 100%;
 }
 
-.position-info-card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(3, auto); /* 3 rows with automatic height */
-  gap: 8px;
-
+.user-info-index {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0px 10px 10px;
+  flex-grow: 1;
 }
 
-.position-info-card p {
+.user-info-index p {
   margin: 0px !important;
   size: 3px;
+}
+
+.user-name-age {
+  width: 100%;
+}
+
+.user-num-info {
+  width: 100%;
+}
+
+.user-num-info {
+  width: 100%;
 }
 
 .primary-info-card {

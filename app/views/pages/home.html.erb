@@ -16,7 +16,21 @@
         <div class="home_page">
           <h1>Serinity</h1>
 
+          <p>
+            Vous n'êtes pas seule face au harcèlement scolaire.
+            Notre site est dédié à fournir un soutien empathique et des ressources essentielles pour ceux qui traversent des moments difficiles à l'école.
+            Nous comprenons les défis émotionnels et psychologiques auxquels vous pourriez être confronté(e) et sommes ici pour vous aider à naviguer à travers cette période difficile.
+            Notre communauté bienveillante offre un espace sécurisé pour partager des expériences, obtenir des conseils pratiques et trouver des solutions constructives.
+            Ensemble, nous travaillons à créer un environnement éducatif sain et respectueux.
+            Vous méritez de vous épanouir académiquement sans craindre le harcèlement.
+            Rejoignez-nous dans cette mission de soutien et d'entraide.
+          </p>
     <% end %>
+
+
+
+
+
 
 
 
@@ -176,12 +190,20 @@
 
 
 
+
+
+
+
+
 <!-- ---------------- Home patient et non connecter ---------------- -->
 
 
-      <% if @user.role == "patient" %>
+      <% if @user.role == "patient" || current_user == nil%>
         <div class="test-patient">
           <p>CODE HOME PATIENT</p>
+        </div>
+        <div>
+
         </div>
       <% end %>
     <% end %>
