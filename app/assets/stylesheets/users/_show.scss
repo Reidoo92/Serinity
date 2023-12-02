@@ -28,15 +28,16 @@
   align-items: flex-start;
   background-color: rgba($color: #e7bac9, $alpha: 0.3);
   border-radius: 16px;
-  width: 600px;
+  width: 640px;
 }
 
 .user-info {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   align-items: center;
   gap: 40px;
-  padding: 10px 0px 10px 40px;
+  padding: 17px 0px 0px 40px;
 }
 
 .user-info p {
@@ -47,6 +48,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100px !important;
 }
 
 .user-num-adress {
