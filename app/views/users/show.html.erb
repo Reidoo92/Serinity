@@ -1,130 +1,128 @@
-<body class="no-navbar">
-
-  <div class="dashboard-index">
-
-    <%= render "shared/nav-dashboard" %>
-
 
 
   <!-- ---------------------Afichage du doctor-------------------------- -->
 
 
+<div class="dashboard-index">
 
-    <% if current_user.role == 'doctor' %>
-      <div class="container2">
-        <div class="index-card-show">
+  <% if current_user.role == 'doctor' %>
+    <%= render "shared/nav-dashboard" %>
+
+    <div class="show-container">
+      <div class="user-card">
+        <div class="user-img">
+          <% if @user.photo.attached?  %>
+            <%= cl_image_tag @user.photo.key, crop: :fill %>
+          <% else %>
             <%= image_tag("pp_default.png") %>
-            <div class="position-info-card">
-              <div class="primary-info-card">
-                <p><%= @user.last_name %></p>
-                <p><%= @user.first_name %></p>
-                <p><%= @user.age %></p>
-              </div>
-              <div class="secondary-info-card">
-                <p><%= @user.adress %></p>
-                <p><%= @user.number %></p>
-              </div>
-            </div>
+          <% end %>
         </div>
 
-
-        <div class="container-bot-show">
-
-          <div class="description-profil">
-            <textarea id="description" name="description" rows="11" style="width: 100%; height: 100%; border-radius: 10px; background-color: rgba(231, 186, 201, 0.3);" placeholder="Insérez votre description ici"></textarea>
+        <div class="user-info">
+          <div class="user-name-age">
+            <p><%= @user.first_name %></p>
+            <p><%= @user.last_name %></p>
+            <p><%= @user.age %> ans</p>
           </div>
 
-
-
-          <div class="reservation">
-
-            <div class="calender">
-              <%= simple_form_for [@user, @reservation] do |f|%>
-
-              <%= f.input :date,
-                          as: :string,
-                          input_html: { data: { controller: "datepicker" }, hidden: true },
-                          label: false %>
-            </div>
-            <div class="input-right">
-              <div class="input-price">
-                <%= f.input :price,
-                            as: :string,
-                            input_html: { class: 'form-control', placeholder: 'Saisissez le prix' },
-                            label: false %>
-              </div>
-              <div class="boutton-valider">
-                <button type="submit" class="boutton-valider">Valider le rendez-vous</button>
-              </div>
-            </div>
+          <div class="user-num-adress">
+            <p><%= @user.number %></p>
+            <p><%= @user.adress %></p>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
-<% else %>
 
-
-
-
-
-  <!-- ---------------------------------------Afichage du patient------------------------------------ -->
-
-
-
-
-    <div class="container2">
-      <div class="index-card-show">
-          <%= image_tag("pp_default.png") %>
-          <div class="position-info-card">
-            <div class="primary-info-card">
-              <p><%= @user.last_name %></p>
-              <p><%= @user.first_name %></p>
-              <p><%= @user.age %></p>
-            </div>
-            <div class="secondary-info-card">
-              <p><%= @user.adress %></p>
-              <p><%= @user.number %></p>
-            </div>
-          </div>
-      </div>
-
-
-      <div class="container-bot-show">
-
-        <div class="description-profil">
-          <textarea id="description" name="description" rows="11" style="width: 100%; height: 100%; border-radius: 10px; background-color: rgba(231, 186, 201, 0.3);" placeholder="Insérez votre description ici"></textarea>
+      <div class="user-reservation">
+        <div class="user-description">
+          description du profil
         </div>
 
+        <div class=""></div>
 
-
-        <div class="reservation">
-
-
-          <div class="calender">
-            <%= simple_form_for [@user, @reservation] do |f|%>
-
+        <div class="calender">
+          <%= simple_form_for [@user, @reservation] do |f|%>
             <%= f.input :date,
                         as: :string,
                         input_html: { data: { controller: "datepicker" }, hidden: true },
                         label: false %>
+        </div>
+
+        <div class="input-right">
+          <div class="input-price">
+            <%= f.input :price,
+                        as: :string,
+                        input_html: { class: 'form-control', placeholder: 'Saisissez le prix' },
+                        label: false %>
           </div>
-          <div class="input-right">
-            <div class="input-price">
-     <!-- <p><%= @reservation.price %></p>  oublie pas de rajouter de le prix -->
-              <%= f.input :price,
-                          as: :string,
-                          input_html: { class: 'form-control', placeholder: 'Saisissez le prix' },
-                          label: false %>
-            </div>
-              <div class="boutton-valider">
-                <button type="submit" class="boutton-valider">Valider le rendez-vous</button>
-              </div>
-            </div>
+          <div class="boutton-valider">
+            <button type="submit" class="boutton-valider">Valider le rendez-vous</button>
           </div>
           <% end %>
         </div>
       </div>
     </div>
+</div>
+
+
+  <% else %>
+
+
+
+
+  <!-- ---------------------------------------Affichage du patient------------------------------------ -->
+
+
+
+
+    <div class="show-container-patient">
+      <div class="user-card">
+        <div class="user-img">
+          <% if @user.photo.attached?  %>
+            <%= cl_image_tag @user.photo.key, crop: :fill %>
+          <% else %>
+            <%= image_tag("pp_default.png") %>
+          <% end %>
+        </div>
+
+        <div class="user-info">
+          <div class="user-name-age">
+            <p><%= @user.first_name %></p>
+            <p><%= @user.last_name %></p>
+            <p><%= @user.age %> ans</p>
+          </div>
+
+          <div class="user-num-adress">
+            <p><%= @user.number %></p>
+            <p><%= @user.adress %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-reservation">
+        <div class="user-description">
+          description du profil
+        </div>
+
+        <div class=""></div>
+
+        <div class="calender">
+          <%= simple_form_for [@user, @reservation] do |f|%>
+            <%= f.input :date,
+                        as: :string,
+                        input_html: { data: { controller: "datepicker" }, hidden: true },
+                        label: false %>
+            <% end %>
+        </div>
+
+        <div class="input-right">
+          <div class="input-price">
+            <p><%= @reservation.price %></p>
+          </div>
+          <div class="boutton-valider">
+            <button type="submit" class="boutton-valider">Valider le rendez-vous</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
   <% end %>
-</body>

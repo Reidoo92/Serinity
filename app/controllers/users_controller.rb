@@ -9,20 +9,21 @@ class UsersController < ApplicationController
   end
 
   def index
+
     @doctors = User.where(role: 'doctor')
     @patients = User.where(role: 'patient')
     @role = current_user.role
 
-    if @role == 'patient'
+    # if @role == 'patient'
+    #   @markers = @doctors.geocoded.map do |doctor|
+    #     {
+    #       lat: doctor.latitude,
+    #       lng: doctor.longitude,
+    #       info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
+    #     }
+    #   end
+    # end
 
-      @markers = @doctors.geocoded.map do |doctor|
-        {
-          lat: doctor.latitude,
-          lng: doctor.longitude
-        }
-      end
-    
-    end
   end
 
   def profiles

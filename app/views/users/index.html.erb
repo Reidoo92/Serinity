@@ -1,5 +1,3 @@
-require "open-uri"
-
 <body class="no-navbar">
 
   <% if current_user.role == 'doctor' %>
@@ -34,12 +32,15 @@ require "open-uri"
                     <%= image_tag("pp_default.png") %>
                   <% end %>
 
-                  <div class="position-info-card">
-
-                    <p><%= patient.first_name %></p>
-                    <p><%= patient.last_name.capitalize %></p>
-                    <p><%= patient.age %> ans</p>
-                    <p><%= patient.number %></p>
+                  <div class="user-info-index">
+                    <div class="user-name-age">
+                      <p><%= patient.first_name %></p>
+                      <p><%= patient.last_name.capitalize %></p>
+                      <p><%= patient.age %> ans</p>
+                    </div>
+                    <div class="user-num-info">
+                      <p><%= patient.number %></p>
+                    </div>
 
                   </div>
                 <% end %>
@@ -66,11 +67,6 @@ require "open-uri"
 
 
 
-                  <% if doctor.photo.attached?  %>
-                    <%= cl_image_tag doctor.photo.key, crop: :fill %>
-                  <% else %>
-                    <%= image_tag("pp_default.png") %>
-                  <% end %>
 
  <% if current_user.role == 'patient' %>
 
@@ -84,17 +80,25 @@ require "open-uri"
       </div>
 
       <div class="index-card-containe-positionr">
-        <div style="width: 100%; height: 600px;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      
+        <%# <div style="width: 100%; height: 600px;"
+          data-controller="map" %>
+          <%# data-map-markers-value="<%= @markers.to_json" %>
+          <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+        <%# </div> %>
+
         <div class="index-card-container">
           <% @doctors.each do |doctor| %>
             <div class="index-card">
               <%= link_to user_path(doctor.id) do %>
-                <%= image_tag("pp_default.png") %>
+
+
+                 <% if doctor.photo.attached?  %>
+                    <%= cl_image_tag doctor.photo.key, crop: :fill %>
+                  <% else %>
+                    <%= image_tag("pp_default.png") %>
+                  <% end %>
+
+
                 <div class="position-info-card">
                   <div class="primary-info-card">
                     <p><%= doctor.last_name %></p>
