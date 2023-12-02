@@ -28,11 +28,12 @@ User.create(email: "gilson@gmail.com", password: "gilson@gmail.com", first_name:
 User.create(email: "laid@gmail.com", password: "laid@gmail.com", first_name: "Laid", last_name: "Sereir", age: 22, number: "0798765432", adress: "3 Av. Marceau, 93130 Noisy-le-Sec", role: "patient")
 User.create(email: "emeraude@gmail.com", password: "emeraude@gmail.com", first_name: "Emeraude", last_name: "Chenille", age: 23, number: "0798738329", adress: "2 bis Rue du Dr Potain, 75019 Paris", role: "patient")
 User.create(email: "ahmed@gmail.com", password: "ahmed@gmail.com", first_name: "Ahmed", last_name: "Salah", age: 20, number: "0798765412", adress: "Foyer Maurice Maignen, 29 Rue de Lourmel, 75015 Paris", role: "patient")
-User.create(email: "fred@gmail.com", password: "fred@gmail.com", first_name: "Fred", last_name: "Code", age: 26, number: "0796543532", adress: "546 rue de la paix, 77300", role: "patient")
-User.create(email: "andre@gmail.com", password: "andre@gmail.com", first_name: "Andre", last_name: "Bresil", age: 24, number: "0783903345", adress: "34 Av. George V, 75008 Paris", role: "patient")
-User.create(email: "francois@gmail.com", password: "francois@gmail.com", first_name: "François", last_name: "Wayne", age: 43, number: "0676453003", adress: "14 Av. Sainte-Foy, 92200 Neuilly-sur-Seine", role: "patient")
+User.create(email: "fred@gmail.com", password: "fred@gmail.com", first_name: "Fred", last_name: "Régent", age: 26, number: "0796543532", adress: "546 rue de la paix, 77300", role: "patient")
+User.create(email: "andre@gmail.com", password: "andre@gmail.com", first_name: "Andre", last_name: "Leroy", age: 24, number: "0783903345", adress: "34 Av. George V, 75008 Paris", role: "patient")
+User.create(email: "francois@gmail.com", password: "francois@gmail.com", first_name: "François", last_name: "Villalba", age: 43, number: "0676453003", adress: "14 Av. Sainte-Foy, 92200 Neuilly-sur-Seine", role: "patient")
 User.create(email: "dalina@gmail.com", password: "dalina@gmail.com", first_name: "Dalina", last_name: "Lesourd", age: 37, number: "0628319321", adress: "32 Rue Lepic, 75018 Paris", role: "patient")
 User.create(email: "thomas@gmail.com", password: "thomas@gmail.com", first_name: "Thomas", last_name: "Traore", age: 99, number: "0609675732", adress: "10 Rue Puget, 75018 Paris", role: "patient")
+User.create(email: "guillaume@gmail.com", password: "guillaume@gmail.com", first_name: "Guillaume", last_name: "Larzillière", age: 20, number: "0609675452", adress: "10 Rue Puget, 75018 Paris", role: "patient")
 
 p "Creating PAST Reservation for galaad@gmail.com..."
 
