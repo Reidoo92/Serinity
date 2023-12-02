@@ -1,42 +1,46 @@
-<body class="no-navbar">
-
-  <div class="dashboard-index">
 
 
 <!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
 
+<div class="dashboard-index">
 
-    <%= render "shared/nav-dashboard" %>
+  <%= render "shared/nav-dashboard" %>
 
-    <div class="index-container">
+  <div class="index-container">
 
-      <div class="search-bar">
-        <%= image_tag("search_barre.png") %>
-      </div>
-      <h1>Mon Historique</h1>
-      <div class="index-card-containe-positionr">
+    <div class="search-bar">
+      <%= image_tag("search_barre.png") %>
+    </div>
+    <h1>Mon historique</h1>
+    <div class="index-card-containe-positionr">
 
-        <div class="index-card-container">
-          <% @reservations.each do |reservation| %>
-            <div class="index-card">
+      <div class="index-card-container">
+        <% @reservations.each do |reservation| %>
+          <div class="index-card">
 
-              <%= link_to user_path(reservation.id), class: "link-card-users" do %>
+            <%= link_to user_path(reservation.id), class: "link-card-users" do %>
 
+              <% if reservation.patient.photo.attached?  %>
+                <%= cl_image_tag reservation.patient.photo.key, crop: :fill %>
+              <% else %>
                 <%= image_tag("pp_default.png") %>
+              <% end %>
 
-                <div class="position-info-card">
-
+              <div class="user-info-index">
+                <div class="user-name-age">
                   <p><%= reservation.patient.first_name %></p>
                   <p><%= reservation.patient.last_name.capitalize %></p>
                   <p><%= reservation.patient.age %> ans</p>
-                  <p><%= reservation.date %></p>
-
                 </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+                <div class="user-num-info">
+                  <p><%= reservation.patient.number %></p>
+                  <p><%= reservation.date %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</body>
+</div>

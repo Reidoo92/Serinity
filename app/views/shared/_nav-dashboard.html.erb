@@ -2,13 +2,16 @@
   <div class="pp-avatar">
   <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
 
-    <% if current_user.photo.attached?  %>
-      <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
-    <% else %>
-      <%= image_tag("pp_default.png", class: "avatar") %>
+    <%= link_to user_path(current_user), class: "link-current-user" do %>
+
+      <% if current_user.photo.attached?  %>
+        <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
+      <% else %>
+        <%= image_tag("pp_default.png", class: "avatar") %>
+      <% end %>
+
+      <%= "Dr #{current_user.last_name}" %>
     <% end %>
-    
-    <%= "Dr #{current_user.last_name}" %>
   </div>
 
   <div class="nav-dashboard">
