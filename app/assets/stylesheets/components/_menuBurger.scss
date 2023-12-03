@@ -11,10 +11,9 @@
 }
 
 .position-burger {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 56px;
-  margin-top: 56px;
+  position: fixed;
+  right: 56px;
+  top: 56px;
 }
 
 .sidenav a {
