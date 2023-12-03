@@ -1,7 +1,47 @@
 <div class="container-paiement">
+   <%= render "shared/nav-dashboard" %>
+
   <div class="cards-paiement">
-    <div class="prix-reservation"><p>Prix de Reservation : 50€</p></div>
-    <div class="solde"><p>Solde : <%= @doctor.balance %></div>
+
+
+
+    <div class="prix-reservation">
+      <p>Prix de Reservation : 50€</p>
+      <p>Solde : <%= @doctor.balance %>
+    </div>
+
+
+
+
+    <div class="container-graphique-paiement">
+
+      <div class="container-graph">
+
+
+        <div class="graph-price">
+          <p>5000</p>
+          <p>4000</p>
+          <p>3000</p>
+          <p>2000</p>
+          <p>1000</p>
+        </div>
+
+        <div class ="container-visu-graph">
+
+          <div class="visu-graph">
+            visu
+          </div>
+
+          <div class="date-graph">
+            date
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
   </div>
-  <div class="diagramme"></div>
 </div>
