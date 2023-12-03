@@ -54,6 +54,8 @@
 }
 
 
+/*--------------------- Dashboard Top ---------------------*/
+
 .dashboard {
   display: flex;
   flex-direction: row;
@@ -67,8 +69,6 @@
   display: flex;
   justify-content: space-between;
 }
-
-/*--------------------- Dashboard Top ---------------------*/
 
 .dashboard-container {
   display: flex;
@@ -89,6 +89,15 @@
   flex-direction: row;
   justify-content: space-between;
   height: 120px;
+}
+
+.card-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-container a .card-top {
+  height: 100%;
 }
 
 .card-top {
