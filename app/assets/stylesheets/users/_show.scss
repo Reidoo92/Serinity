@@ -31,6 +31,12 @@
   width: 640px;
 }
 
+.user-img img {
+height: 100%;
+width: 100%;
+border-radius: 16px 0px 0px 16px;
+}
+
 .user-info {
   display: flex;
   flex-direction: row;
