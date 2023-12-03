@@ -51,15 +51,7 @@
       </div>
     </div>
   <% end %>
-
-
-
-
-
-  <!-- ------------------------------- Index qui permet au patient de voire tous les docteurs ------------------------------- -->
-
-
-
+  
 
 
 
@@ -80,11 +72,16 @@
       </div>
 
       <div class="index-card-containe-positionr">
-        <%# <div style="width: 100%; height: 600px;"
-          data-controller="map" %>
-          <%# data-map-markers-value="<%= @markers.to_json" %>
-          <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-        <%# </div> %>
+
+        <!-- ------------------------------------- MapBox ------------------------------------- -->
+
+        <div style="width: 100px; height: 200px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+        <!-- ------------------------------------- MapBox ------------------------------------- -->
 
         <div class="index-card-container">
           <% @doctors.each do |doctor| %>

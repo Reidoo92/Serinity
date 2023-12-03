@@ -1,48 +1,90 @@
-<h2>Editez votre profil</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<div class="edit-user-profil">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email", placeholder: "Email"}%>
+  <h2>Editez votre profil</h2>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+  <div class="container-user-info">
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs-edit-profil">
+
+
+        <div class="current-info">
+
+          <%= f.input :email,
+                      label: false,
+                      hint: "Veuillez entrer votre email actuel pour confirmer vos changements",
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email", placeholder: "Email"}%>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+
+          <%= f.input :current_password,
+                      label: false,
+                      hint: "Veuillez entrer votre mot de passe actuel pour confirmer vos changements",
+                      required: true,
+                      input_html: { autocomplete: "current-password", placeholder: 'Mot de passe' } %>
+
+          <%= f.input :adress,
+                      label: false,
+                      required: false,
+                      input_html: { autocomplete: "address", placeholder: 'Nouvelle adresse' } %>
+          <div class="textarea-edit-user">
+            <%= f.text_area :description,
+                        required: false,
+                        input_html: { autocomplete: "description", placeholder: 'Décrivez votre profil, vos compétences et expériences de manière à vous présenter de manière complète et authentique.' } %>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="new-user-info">
+
+
+          <%= f.input :password,
+                      hint: "Laissez-le champ vide si vous ne souhaitez pas le modifier",
+                      label: false,
+                      required: false,
+                      input_html: { autocomplete: "new-password", placeholder: 'Nouveau mot de passe' } %>
+          <%= f.input :password_confirmation,
+                      label: false,
+                      required: false,
+                      input_html: { autocomplete: "new-password", placeholder: 'Confirmation du nouveau mot de passe' } %>
+
+
+          <%= f.input :photo,
+                      label: "Modifier votre photo de profil",
+                      as: :file %>
+
+          <%= f.input :photo,
+                      label: "Ajouter de nouveaux documents",
+                      as: :file %>
+
+        </div>
+
+      </div>
+
+
+      <div class="input-end-to-form">
+
+        <div class="update-btn">
+          <%= f.button :submit, "Update" %>
+        </div>
+
     <% end %>
 
-    <%= f.input :password,
-                hint: "Laissez-le vide si vous ne souhaitez pas le modifier",
-                label: false,
-                required: false,
-                input_html: { autocomplete: "new-password", placeholder: 'Nouveau mot de passe' } %>
-    <%= f.input :password_confirmation,
-                label: false,
-                required: false,
-                input_html: { autocomplete: "new-password", placeholder: 'Confirmation du nouveau mot de passe' } %>
-    <%= f.input :current_password,
-                label: false,
-                hint: "Veuillez entrer votre mot de passe actuel pour confirmer vos changements",
-                required: true,
-                input_html: { autocomplete: "current-password", placeholder: 'Mot de passe' } %>
-        <%= f.input :adress,
-                label: false,
-                required: false,
-                input_html: { autocomplete: "address", placeholder: 'Adresse' } %>
-        <%= f.text_area :description,
-                required: false,
-                input_html: { autocomplete: "address", placeholder: 'Décrivez votre profil, vos compétences et expériences de manière à vous présenter de manière complète et authentique."' } %>
+        <div class="delete-account">
+          <%= button_to "Fermer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
+        </div>
+
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+  <%= link_to "Retour", :back %>
+</div>
