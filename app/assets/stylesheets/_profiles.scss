@@ -1,29 +1,25 @@
-body {
-  margin: 0;
-  padding: 0;
-}
 
 .container-paiement {
   display: flex;
-  flex-direction: column;
-  height: 300px;
+  flex-direction: row;
+  height: 100vh;
+
 }
 
 .cards-paiement {
   display: flex;
-  flex-direction: flex;
+  flex-direction: column;
+  flex-grow: 1;
   gap: 50px;
   padding: 50px;
+
 }
 
-.prix-reservation,
-.solde {
-  height: 200px;
-  width: 50%;
-  box-sizing: border-box;
+.prix-reservation {
   padding: 20px;
   border: 1px solid black;
   border-radius: 10px;
+  width: 300px;
 }
 
 .prix-reservation p {
@@ -32,12 +28,30 @@ body {
   margin: 0;
 }
 
-.solde {
-  border-left: none;
+.container-graphique-paiement {
+  background-color: red;
+  border-radius: 16px;
+  height: 600px;
+  width: 100%;
+  padding: 32px;
 }
 
-.divB {
-  height: 100px;
-  border: 2px solid black;
-  border-radius: 10px;
+.container-graph {
+  display: flex;
+  flex-direction: row;
+  background-color: greenyellow;
+  border-radius: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.container-visu-graph {
+  background-color: yellow;
+  width: 100%;
+}
+
+.visu-graph
+
+.date-graph {
+  background-color: rgb(0, 255, 247);
 }
