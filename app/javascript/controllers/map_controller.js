@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl' // Don't forget this!
 
 export default class extends Controller {
+
   static values = {
     apiKey: String,
     markers: Array
@@ -14,6 +15,7 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }

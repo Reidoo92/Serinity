@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   # -------------- Géocode -------------- #
 
-  # geocoded_by :adress
-  # after_validation :geocode, if: :will_save_change_to_adress?
+  geocoded_by :adress
+  after_validation :geocode, if: :will_save_change_to_adress?
 
    # -------------- ------- -------------- #
 
