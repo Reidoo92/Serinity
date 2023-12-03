@@ -10,10 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "components/navbar-dashboard";
+
 @import "pages/index";
 @import "pages/form";
 
 @import "registrations/new";
+@import "registrations/edit";
+
 @import "passwords/new";
 
 @import "users/new";
