@@ -158,7 +158,7 @@
 }
 
 .img-rotation {
-  animation: rotateAnimation 44s linear infinite; /* 4s de durée, ajustez selon vos besoins */
+  animation: rotateAnimation 44s linear infinite;
 }
 
 @keyframes rotateAnimation {
@@ -178,8 +178,8 @@
   background-color: rgba($color: #c9f0ff, $alpha: 0.3);
   border-radius: 32px;
   padding: 20px;
-  overflow: hidden; // Assure que le contenu débordant n'est pas visible
-  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  overflow: hidden;
+  position: relative;
   transition: transform 0.3s ease;
 }
 
@@ -190,4 +190,42 @@
 .li-week {
   width: 150px;
   height: 100%;
+}
+
+.containers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  background-color: #b4eef3f6;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.full-widths {
+  grid-column: 1 / -1;
+  background-color: #b4eef3;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 480px;
+}
+.half-widths {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 200px;
+}
+.half-widths > div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.seventy-percents {
+  background-color: #f8867ce5;
+}
+.thirty-percents {
+  background-color: #ffffff;
 }
