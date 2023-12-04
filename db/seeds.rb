@@ -15,17 +15,136 @@ User.destroy_all
 p "Database clean..."
 
 p "Creating Doctor..."
-User.create(email: "galaad@gmail.com", password: "galaad@gmail.com", first_name: "Galaad", last_name: "Michaud", age: 24, number: "0612345678", adress: "17 Rue Dupetit-Thouars, 75003 Paris", speciality: "Psychologue", role: "doctor")
-User.create(email: "remi@gmail.com", password: "remi@gmail.com", first_name: "Remi", last_name: "Beuch", age: 30, number: "0690898989", adress: "195 Bd Saint-Germain, 75007 Paris", speciality: "Psychologue", role: "doctor")
-User.create(email: "guilhem@gmail.com", password: "guilhem@gmail.com", first_name: "Guilhem", last_name: "Hidalgo", age: 28, number: "0678787878", adress: "106 Rue des Dames, 75017 Paris", speciality: "Psychologue", role: "doctor")
-User.create(email: "thibaud@gmail.com", password: "thibaud@gmail.com", first_name: "Thibaud", last_name: "Maurel", age: 27, number: "0609090990", adress: "190 Rue Gabriel Péri, 92700 Colombe", speciality: "Psychologue", role: "doctor")
-User.create(email: "fatma@gmail.com", password: "fatma@gmail.com", first_name: "Fatma", last_name: "Bellahouel", age: 29, number: "0618181818", adress: "21 Rue Maurice Rechsteiner, 95100 Argenteuil", speciality: "Psychologue", role: "doctor")
-User.create(email: "alexis@gmail.com", password: "alexis@gmail.com", first_name: "Alexis", last_name: "Stephan", age: 99, number: "0676535212", adress: "55 Rue des Nollées, 92230 Gennevilliers", speciality: "Psychologue", role: "doctor")
+
+
+
+gilson = User.create(
+  email: "gilson@gmail.com",
+  password: "gilson@gmail.com",
+  first_name: "Gilson",
+  last_name: "Djassan",
+  age: 25,
+  number: "0687654321",
+  adress: "67 Rue Crozatier, 75012 Paris",
+  role: "doctor"
+)
+
+# Téléchargez et attachez la photo à l'utilisateur
+photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1696260712/eclbw8adfm12hx4klcxk.jpg"
+gilson.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
+
+
+laid = User.create(
+  email: "laid@gmail.com",
+  password: "laid@gmail.com",
+  first_name: "Laid",
+  last_name: "Sereir",
+  age: 22,
+  number: "0798765432",
+  adress: "3 Av. Marceau, 93130 Noisy-le-Sec",
+  role: "doctor")
+
+photo_url = "https://avatars.githubusercontent.com/u/119537150?v=4"
+laid.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
+
+remi = User.create(
+  email: "remi@gmail.com",
+  password: "remi@gmail.com",
+  first_name: "Remi",
+  last_name: "Beuch",
+  age: 30,
+  number: "0690898989",
+  adress: "195 Bd Saint-Germain, 75007 Paris",
+  speciality: "Psychologue",
+  role: "doctor"
+)
+
+
+photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1622564077/uc7xy1tfwbwhq5b96ox3.jpg"
+remi.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
+
+guilhem = User.create(
+  email: "guilhem@gmail.com",
+  password: "guilhem@gmail.com",
+  first_name: "Guilhem",
+  last_name: "Hidalgo",
+  age: 28,
+  number: "0678787878",
+  adress: "106 Rue des Dames, 75017 Paris",
+  speciality: "Psychologue",
+  role: "doctor"
+)
+
+photo_url = "https://avatars.githubusercontent.com/u/102871325?v=4"
+guilhem.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
+
+thibaud = User.create(
+  email: "thibaud@gmail.com",
+  password: "thibaud@gmail.com",
+  first_name: "Thibaud",
+  last_name: "Maurel",
+  age: 27,
+  number: "0609090990", adress: "190 Rue Gabriel Péri, 92700 Colombe",
+  speciality: "Psychologue",
+  role: "doctor"
+)
+
+photo_url = "https://avatars.githubusercontent.com/u/30435844?v=4"
+thibaud.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
+
+fatma = User.create(
+  email: "fatma@gmail.com",
+  password: "fatma@gmail.com",
+  first_name: "Fatma",
+  last_name: "Bellahouel",
+  age: 29, number: "0618181818",
+  adress: "21 Rue Maurice Rechsteiner, 95100 Argenteuil",
+  speciality: "Psychologue",
+  role: "doctor"
+)
+
+photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1633599654/tkeypdxsxslog25zampw.jpg"
+fatma.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
+
+alexis = User.create(
+  email: "alexis@gmail.com",
+  password: "alexis@gmail.com",
+  first_name: "Alexis",
+  last_name: "Stephan",
+  age: 99,
+  number: "0676535212",
+  adress: "55 Rue des Nollées, 92230 Gennevilliers",
+  speciality: "Psychologue",
+  role: "doctor"
+)
+
+photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1671276463/xrbguid47igglejilbqf.jpg"
+alexis.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
 
 p "Creating Patient..."
 
-User.create(email: "gilson@gmail.com", password: "gilson@gmail.com", first_name: "Gilson", last_name: "Djassan", age: 25, number: "0687654321", adress: "1B Rue Louis Vuitton, 92600 Asnières-sur-Seine", role: "patient")
-User.create(email: "laid@gmail.com", password: "laid@gmail.com", first_name: "Laid", last_name: "Sereir", age: 22, number: "0798765432", adress: "3 Av. Marceau, 93130 Noisy-le-Sec", role: "patient")
+galaad = User.create(
+  email: "galaad@gmail.com",
+  password: "galaad@gmail.com",
+  first_name: "Galaad",
+  last_name: "Michaud",
+  age: 24,
+  number: "0612345678",
+  adress: "17 Rue Dupetit-Thouars, 75003 Paris",
+  speciality: "Psychologue",
+  role: "patient"
+)
+
+  photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1696260712/eclbw8adfm12hx4klcxk.jpg"
+  galaad.photo.attach(io: URI.open(photo_url), filename: "file1.jpg", content_type: "image/jpeg")
+
 User.create(email: "emeraude@gmail.com", password: "emeraude@gmail.com", first_name: "Emeraude", last_name: "Chenille", age: 23, number: "0798738329", adress: "2 bis Rue du Dr Potain, 75019 Paris", role: "patient")
 User.create(email: "ahmed@gmail.com", password: "ahmed@gmail.com", first_name: "Ahmed", last_name: "Salah", age: 20, number: "0798765412", adress: "Foyer Maurice Maignen, 29 Rue de Lourmel, 75015 Paris", role: "patient")
 User.create(email: "fred@gmail.com", password: "fred@gmail.com", first_name: "Fred", last_name: "Régent", age: 26, number: "0796543532", adress: "546 rue de la paix, 77300", role: "patient")
