@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def profiles
     @doctor = current_user
-    # @reservations = Reservation.all
+    @reservations = Reservation.all
   end
 
   private
