@@ -1,0 +1,14 @@
+<label for="search-input">
+      <i class="ion-location"></i>
+    </label>
+      <%= form_with url: users_path, method: :get, class: "d-flex derriere" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          id: "search-input",
+          class: "search-input",
+          type: "search",
+          placeholder: "Effectuez une recherche"
+        %>
+        <%= submit_tag "Recherche", class: "search-button", type: "submit" %>
+      <% end %>
+      </div>
