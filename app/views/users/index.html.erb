@@ -2,24 +2,21 @@
 
 <!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
 
+
 <% if current_user.role == 'doctor' %>
   <!DOCTYPE html>
   <html lang="fr">
     <head>
       <meta charset="UTF-8">
-      <title>Résumé des Patients - Dr Michaud</title>
+      <title>Résumé des Patients - Dr <%= @user.last_name.upcase %></title>
       <link rel="stylesheet" href="styles.css">
     </head>
     <body class="patients-home">
-      <div class="sidebar">
-        <div class="sidebar-content">
-          <nav class="sidebar-nav">
-            <%= render "shared/nav-dashboard" %>
-          </nav>
-        </div>
-      </div>
+
+      <%= render "shared/nav-dashboard" %>
+
       <div class="main-content">
-        <h1>Patients<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).count %></span></h1>
+        <h1>Mes patients<span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
         <div class="patients-search">
           <input type="text" placeholder="Recherchez un patient" class="recherche">
         </div>
@@ -36,8 +33,16 @@
                     <% end %>
                   <% end %>
                 </div>
+
+                 <div class="show-more">
+                    <%= link_to "Voir plus", user_path(patient.id) %>
+
+                  </div>
+
+
+
                 <div class="patient-name">
-                  <p><%= "#{patient.first_name} #{patient.last_name.upcase}" %></p>
+                  <p><%= "#{patient.first_name.capitalize} #{patient.last_name.upcase}" %></p>
                 </div>
                 <div class="patient-details">
                   <span>
@@ -59,6 +64,7 @@
 <% end %>
 
 
+
 <!-- ------------------------------- Index qui permet au patient de voire tous les docteurs ------------------------------- -->
 
 
@@ -68,51 +74,51 @@
 
   <div class="index-container">
 
-  <div class="search-container">
+    <div class="search-container">
 
-    <%= render "search" %>
+      <%= render "search" %>
 
-    <h1>Psychologue</h1>
+      <h1>Psychologue</h1>
 
-    <div class="index-card-containe-positionr">
+      <div class="index-card-containe-positionr">
 
-    <!-- ------------------------------------- MapBox ------------------------------------- -->
+      <!-- ------------------------------------- MapBox ------------------------------------- -->
 
-      <div style="width: 500px; height: 400px;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+        <div style="width: 500px; height: 400px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
 
-    <!-- ------------------------------------- MapBox ------------------------------------- -->
+      <!-- ------------------------------------- MapBox ------------------------------------- -->
 
-      <div class="index-card-container">
-        <% @doctors.each do |doctor| %>
-          <div class="index-card">
+        <div class="index-card-container">
+          <% @doctors.each do |doctor| %>
+            <div class="index-card">
 
-            <%= link_to user_path(doctor.id), class: "link-card-users" do %>
+              <%= link_to user_path(doctor.id), class: "link-card-users" do %>
 
-              <% if doctor.photo.attached?  %>
-                <%= cl_image_tag doctor.photo.key, crop: :fill %>
-              <% else %>
-                <%= image_tag("pp_default.png") %>
+                <% if doctor.photo.attached?  %>
+                  <%= cl_image_tag doctor.photo.key, crop: :fill %>
+                <% else %>
+                  <%= image_tag("pp_default.png") %>
+                <% end %>
+
+                <div class="user-info-index">
+                  <div class="user-name-age">
+                    <p><%= doctor.first_name %></p>
+                    <p><%= doctor.last_name.capitalize %></p>
+                    <p><%= doctor.age %> ans</p>
+                  </div>
+                  <div class="user-num-info">
+                    <p><%= doctor.number %></p>
+                  </div>
+                </div>
               <% end %>
-
-              <div class="user-info-index">
-                <div class="user-name-age">
-                  <p><%= doctor.first_name %></p>
-                  <p><%= doctor.last_name.capitalize %></p>
-                  <p><%= doctor.age %> ans</p>
-                </div>
-                <div class="user-num-info">
-                  <p><%= doctor.number %></p>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 <% end %>
