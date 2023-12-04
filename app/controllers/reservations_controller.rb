@@ -54,6 +54,23 @@ class ReservationsController < ApplicationController
 
   private
 
+  # def filter_reservations(filter)
+  #   case filter
+  #   when "Aujourd'hui"
+  #     Reservation.where(date: Date.today)
+  #   when 'Hier'
+  #     Reservation.where(date: Date.yesterday)
+  #   when 'Cette semaine'
+  #     Reservation.where('date >= ? AND date <= ?', Date.today.beginning_of_week, Date.today.end_of_week)
+  #   when 'La semaine dernière'
+  #     Reservation.where('date >= ? AND date <= ?', 1.week.ago.beginning_of_week, 1.week.ago.end_of_week)
+  #   when 'Ce mois'
+  #     Reservation.where('date >= ? AND date <= ?', Date.today.beginning_of_month, Date.today.end_of_month)
+  #   else
+  #     Reservation.all
+  #   end
+  # end
+
   def reservation_params
     params.require(:reservation).permit(:date, :price)
   end

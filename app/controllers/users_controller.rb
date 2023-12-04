@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def profiles
     @doctor = current_user
+    # @reservations = Reservation.all
   end
 
   private
