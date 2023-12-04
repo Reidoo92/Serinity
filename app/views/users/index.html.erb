@@ -3,54 +3,60 @@
 <!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
 
 <% if current_user.role == 'doctor' %>
-
-  <div class="dashboard-index">
-
-    <%= render "shared/nav-dashboard" %>
-
-    <div class="index-container">
-
-    <div class="search-container">
-
-    <%= render "search" %>
-
-
-      <h1>Patients</h1>
-
-      <div class="index-card-containe-positionr">
-
-        <div class="index-card-container">
+  <!DOCTYPE html>
+  <html lang="fr">
+    <head>
+      <meta charset="UTF-8">
+      <title>Résumé des Patients - Dr Michaud</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="patients-home">
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <nav class="sidebar-nav">
+            <%= render "shared/nav-dashboard" %>
+          </nav>
+        </div>
+      </div>
+      <div class="main-content">
+        <h1>Patients<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).count %></span></h1>
+        <div class="patients-search">
+          <input type="text" placeholder="Recherchez un patient" class="recherche">
+        </div>
+        <div class="patients-container">
           <% @patients.each do |patient| %>
-            <div class="index-card">
-
-              <%= link_to user_path(patient.id), class: "link-card-users" do %>
-
-                <% if patient.photo.attached?  %>
-                  <%= cl_image_tag patient.photo.key, crop: :fill %>
-                <% else %>
-                  <%= image_tag("pp_default.png") %>
-                <% end %>
-
-                <div class="user-info-index">
-                  <div class="user-name-age">
-                    <p><%= patient.first_name %></p>
-                    <p><%= patient.last_name.capitalize %></p>
-                    <p><%= patient.age %> ans</p>
-                  </div>
-                  <div class="user-num-info">
-                    <p><%= patient.number %></p>
-                  </div>
+            <div class="patient-card">
+              <div class="patient-info">
+                <div class="patient-avatar"> <!-- Ajoutez la classe "patient-avatar" ici -->
+                  <%= link_to user_path(patient.id), class: "link-card-users" do %>
+                    <% if patient.photo.attached? %>
+                      <%= cl_image_tag patient.photo.key, crop: :fill, class: "avatar" %>
+                    <% else %>
+                      <%= image_tag("pp_default.png", class: "avatar") %>
+                    <% end %>
+                  <% end %>
                 </div>
-              <% end %>
+                <div class="patient-name">
+                  <p><%= "#{patient.first_name} #{patient.last_name.upcase}" %></p>
+                </div>
+                <div class="patient-details">
+                  <span>
+                    <i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6;"></i>
+                    <%= patient.email %>
+                  </span>
+                  <span>
+                    <i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
+                    <%= patient.number %>
+                  </span>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
+    </body>
+  </html>
 <% end %>
-
-
 
 
 <!-- ------------------------------- Index qui permet au patient de voire tous les docteurs ------------------------------- -->
