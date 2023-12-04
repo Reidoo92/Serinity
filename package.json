@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ionicons": "^5.0.1",
     "stimulus": "^3.2.2"
   }
 }
