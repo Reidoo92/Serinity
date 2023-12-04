@@ -1,0 +1,43 @@
+.search-container {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #3498db;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-button {
+  background-color: #e7bac9;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.search-button:hover {
+  background-color: #fa8bb0;
+}
+
+/* Nouvelles propriétés pour centrer verticalement */
+.search-container label {
+  display: flex;
+  align-items: center;
+  margin-right: 8px; /* Ajout d'une marge pour l'espace entre l'icône et la barre de recherche */
+}
+
+/* Taille fixe pour la barre de recherche */
+.search-input {
+  width: 400px; /* Ajustez la largeur selon vos besoins en pixels */
+}

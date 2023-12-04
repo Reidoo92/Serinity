@@ -24,6 +24,14 @@ class UsersController < ApplicationController
       end
     end
 
+    if params[:query].present?
+      @patients = @patients.where("first_name ILIKE :query OR last_name ILIKE :query", query: "%#{params[:query]}%")
+    end
+
+    if params[:query].present?
+      @doctors = @doctors.where("first_name ILIKE :query OR last_name ILIKE :query", query: "%#{params[:query]}%")
+    end
+
   end
 
   def profiles

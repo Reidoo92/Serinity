@@ -10,9 +10,10 @@
 
     <div class="index-container">
 
-      <div class="search-bar">
-        <%= image_tag("search_barre.png") %>
-      </div>
+    <div class="search-container">
+
+    <%= render "search" %>
+
 
       <h1>Patients</h1>
 
@@ -61,9 +62,9 @@
 
   <div class="index-container">
 
-    <div class="search-bar">
-      <%= image_tag("search_barre.png") %>
-    </div>
+  <div class="search-container">
+
+    <%= render "search" %>
 
     <h1>Psychologue</h1>
 
@@ -105,6 +106,7 @@
           </div>
         <% end %>
       </div>
+    </div>
     </div>
   </div>
 <% end %>
