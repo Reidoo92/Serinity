@@ -23,7 +23,6 @@ class UsersController < ApplicationController
         }
       end
     end
-
     if params[:query].present?
       @patients = @patients.where("first_name ILIKE :query OR last_name ILIKE :query", query: "%#{params[:query]}%")
     end
@@ -31,6 +30,12 @@ class UsersController < ApplicationController
     if params[:query].present?
       @doctors = @doctors.where("first_name ILIKE :query OR last_name ILIKE :query", query: "%#{params[:query]}%")
     end
+
+    respond_to do |format|
+      format.html #{users_path}
+      format.text { render partial: 'users/list', locals: { patients: @patients}, formats: [:html]}
+    end
+
 
   end
 

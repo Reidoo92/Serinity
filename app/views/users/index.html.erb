@@ -4,13 +4,18 @@
 
 
 <% if current_user.role == 'doctor' %>
-  <!DOCTYPE html>
-  <html lang="fr">
-    <head>
-      <meta charset="UTF-8">
-      <title>Résumé des Patients - Dr <%= current_user.last_name.upcase %></title>
-      <link rel="stylesheet" href="styles.css">
-    </head>
+
+  <div class="dashboard-index">
+
+    <%= render "shared/nav-dashboard" %>
+
+    <div class="index-container">
+
+    <div class="search-container" data-controller="search-users" data-search-users-target="lol" class="search-container">
+
+      <%= render "search" %>
+
+<% if current_user.role == 'doctor' %>
     <body class="patients-home">
 
       <%= render "shared/nav-dashboard" %>
@@ -33,6 +38,7 @@
                     <% end %>
                   <% end %>
                 </div>
+
 
                  <div class="show-more">
                     <%= link_to "Voir plus", user_path(patient.id) %>
@@ -60,7 +66,6 @@
         </div>
       </div>
     </body>
-  </html>
 <% end %>
 
 
