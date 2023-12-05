@@ -1,3 +1,7 @@
+body {
+  background-color: #ecf0f1;
+}
+
 .background-image {
   width: 100%;
   height: 100%;
@@ -60,7 +64,7 @@
   display: flex;
   flex-direction: row;
   gap: 56px;
-  background-color: white;
+  background-color: #ecf0f1;
   height: 100vh;
   overflow-y: hidden;
 }
@@ -88,7 +92,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 120px;
+  height: 97px;
 }
 
 .card-container a {
@@ -104,17 +108,35 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba($color: #c9f0ff, $alpha: 0.3);
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 220px;
   border-radius: 6px;
   padding: 10px;
   overflow: hidden; // Assure que le contenu débordant n'est pas visible
   position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+  border: 2px solid transparent;
+}
+
+.card-top h3 {
+  font-size: 1.2em;
+
+}
+
+.icon-info-card {
+  display: flex;
+  gap: 5px;
+}
+
+.icon-info-card p,
+.icon-info-card i {
+  color: #666;
 }
 
 .card-top:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  border-color: #2c3e50;
 }
 
 .chiffre-affaire {
@@ -137,15 +159,15 @@
 .patient-type-card {
   background-color: rgba($color: #c9f0ff, $alpha: 0.3);
   width: 650px;
-  border-radius: 32px;
+  border-radius: 8px;
   padding: 20px;
   overflow: hidden; // Assure que le contenu débordant n'est pas visible
   position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .patient-type-card:hover {
-  transform: scale(1.07);
+  transform: scale(1.04);
 }
 
 .patient-container {
@@ -176,15 +198,15 @@
 
 .week-reservation-card {
   background-color: rgba($color: #c9f0ff, $alpha: 0.3);
-  border-radius: 32px;
+  border-radius: 8px;
   padding: 20px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .week-reservation-card:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .li-week {

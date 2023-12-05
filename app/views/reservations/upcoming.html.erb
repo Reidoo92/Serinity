@@ -6,7 +6,7 @@
       <%= render "shared/nav-dashboard" %>
 
       <div class="main-content">
-        <h1>Mes rendez-vous<span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
+        <h1>Mes rendez-vous<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).where("date >= ?", Date.today).count %></span></h1>
         <div class="patients-search">
           <input type="text" placeholder="Recherchez un patient" class="recherche">
         </div>
@@ -40,8 +40,8 @@
                     <%= reservation.patient.email %>
                   </span>
                   <span>
-                    <i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
-                    <%= reservation.patient.number %>
+                    <i class="fa-solid fa-calendar-days" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
+                    <%= reservation.date %>
                   </span>
                 </div>
               </div>
