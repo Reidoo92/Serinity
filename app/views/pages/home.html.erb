@@ -189,61 +189,37 @@
 
 
 <!-- ---------------- Dashboard du docteur ---------------- -->
+<% if @user.present? && @user.role == "doctor" %>
+  <div class="dashboard">
+    <%= render "shared/nav-dashboard" %>
 
-    <% if @user.present? %>
-      <% if @user.role == "doctor" %>
+    <div class="dashboard-container">
+      <div class="card-container">
+        <!-- Patients Card -->
+        <%= link_to users_path, class: "card-top" do %>
+          <h3>Patients</h3>
+          <span><%= Reservation.where(doctor_id: current_user).count %></span>
+        <% end %>
 
-        <div class="dashboard">
+        <!-- Previous Consultations Card -->
+        <%= link_to past_reservations_path(current_user), class: "card-top" do %>
+          <h3>Consultations précédentes</h3>
+          <span><%= Reservation.where(doctor_id: current_user).where("date < ?", Date.today).count %></span>
+        <% end %>
 
-          <!-- Div pour la Navbar de gauche-->
-          <%= render "shared/nav-dashboard" %>
+        <!-- Upcoming Consultations Card -->
+        <%= link_to upcoming_reservations_path(current_user), class: "card-top" do %>
+          <h3>Prochaines consultations</h3>
+          <span><%= Reservation.where(doctor_id: current_user).where("date > ?", Date.today).count %></span>
+        <% end %>
 
-          <div class="dashboard-container">
-
-            <!-- Div pour les 4 carte du haut du dashboard de Patient à Chiffre d'affaires -->
-            <div class="card-container">
-
-              <%= link_to users_path do %>
-
-                <div class="card-top">
-                  <h3><strong>Patients</strong></h1>
-                  <strong><%= Reservation.where(doctor_id: current_user).count %></strong>
-                </div>
-
-              <% end %>
-
-              <%= link_to past_reservations_path(current_user) do %>
-
-                <div class="card-top">
-                  <h3><strong>Consultations précédentes</strong></h3>
-                  <strong><%= Reservation.where(doctor_id: current_user).where("date < ?", Date.today).count %></strong>
-                </div>
-
-               <% end %>
-
-              <%= link_to upcoming_reservations_path(current_user)  do %>
-
-                <div class="card-top">
-                  <h3><strong>Prochaines consultations</strong></h3>
-                  <strong><%= Reservation.where(doctor_id: current_user).where("date > ?", Date.today).count %></strong>
-                </div>
-
-               <% end %>
-
-              <%= link_to profiles_path do %>
-
-                <div class="card-top">
-                  <h3><strong>Chiffre d'affaires</strong></h3>
-                  <div class="chiffre-affaire">
-                    <p><strong>3783€</strong><p>
-                    <p class="pourcent-up">+7,03%</p>
-                  </div>
-                </div>
-
-               <% end %>
-            </div>
-
-
+        <!-- Revenue Card -->
+        <%= link_to profiles_path, class: "card-top" do %>
+          <h3>Chiffre d'affaires</h3>
+              <% total_revenue = Reservation.where(doctor_id: current_user).sum(:price) %>
+              <span><%= number_to_currency(total_revenue, unit: '€') %></span>
+      </div>
+        <% end %>
           <!-- Div pour les 2 carte du milieux "Catégorie de patients" et "consultation de la semaine" -->
             <div class="midle-container">
 
@@ -316,49 +292,13 @@
                 </div>
               </div>
             </div>
-
-
-            <!-- Div pour l'activité du mois -->
-
-            <div>
-
-            </div>
-
-
-
-
-
+           <div class="month-activity-card">
+               <h3>Activité par mois</h3>
+                <div class="chart-container">
+                  <!-- TABLEAAU A CODER -->
+                </div>
+           </div>
           </div>
-
-
-
-
         </div>
       <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ---------------- Home patient et non connecter ---------------- -->
-
-
-      <% if @user.role == "patient" || current_user == nil%>
-        <div class="test-patient">
-        </div>
-        <div>
-
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 </body>
