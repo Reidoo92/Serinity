@@ -1,4 +1,5 @@
 
+
 <% @reservations.select { |reservation| reservation.date >= Date.today }.each do |reservation| %>
 
   <% if reservation.date < Date.today %>

@@ -1,26 +1,40 @@
-<div data-search-users-target= "list" class="index-card-container">
+<%# <div data-search-users-target= "list" class="index-card-container"> %>
+<div data-search-users-target= "list" class="patients-container">
   <% @patients.each do |patient| %>
-    <div class="index-card">
-
-      <%= link_to user_path(patient.id), class: "link-card-users" do %>
-
-        <% if patient.photo.attached?  %>
-          <%= cl_image_tag patient.photo.key, crop: :fill %>
-        <% else %>
-          <%= image_tag("pp_default.png") %>
-        <% end %>
-
-        <div class="user-info-index">
-          <div class="user-name-age">
-            <p><%= patient.first_name %></p>
-            <p><%= patient.last_name.capitalize %></p>
-            <p><%= patient.age %> ans</p>
-          </div>
-          <div class="user-num-info">
-            <p><%= patient.number %></p>
-          </div>
+    <div class="patient-card">
+      <div class="patient-info">
+        <div class="patient-avatar"> <!-- Ajoutez la classe "patient-avatar" ici -->
+          <%= link_to user_path(patient.id), class: "link-card-users" do %>
+            <% if patient.photo.attached? %>
+              <%= cl_image_tag patient.photo.key, crop: :fill, class: "avatar" %>
+            <% else %>
+              <%= image_tag("pp_default.png", class: "avatar") %>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
+
+
+        <div class="show-more">
+          <%= link_to "Voir plus", user_path(patient.id) %>
+
+        </div>
+
+
+
+        <div class="patient-name">
+          <p><%= "#{patient.first_name.capitalize} #{patient.last_name.upcase}" %></p>
+        </div>
+        <div class="patient-details">
+          <span>
+            <i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6;"></i>
+            <%= patient.email %>
+          </span>
+          <span>
+            <i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
+            <%= patient.number %>
+          </span>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

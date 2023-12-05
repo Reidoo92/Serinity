@@ -110,12 +110,28 @@ th {
   display: flex;
 }
 
+.top-index {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.title-index {
+  padding-top: 10px;
+}
+
 .patients-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px; /* Adjust the space between cards */
   margin-left: 2px;
-  margin-top: 25px;
+  margin-top: 48px;
 }
 
 .patient-card {
@@ -158,8 +174,8 @@ th {
 }
 
 .counterpatient {
-  font-size: 15px; /* Taille de police plus petite pour la classe .count */
-  color: gray; /* Couleur grise pour la classe .count */
+  font-size: 24px;
+  color: gray;
   margin-left: 8px;
 }
 

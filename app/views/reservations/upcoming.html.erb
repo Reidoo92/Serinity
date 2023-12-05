@@ -5,50 +5,16 @@
 
       <%= render "shared/nav-dashboard" %>
 
-      <div class="main-content">
+      <div  data-controller="search-users" class="main-content">
+
+        <%= render "users/search" %>
 
         <h1>Mes rendez-vous<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).where("date >= ?", Date.today).count %></span></h1>
 
         <div class="patients-search">
           <input type="text" placeholder="Recherchez un patient" class="recherche">
         </div>
-        <div class="patients-container">
-          <% @reservations.each do |reservation| %>
-            <div class="patient-card">
-              <div class="patient-info">
-                <div class="patient-avatar"> <!-- Ajoutez la classe "patient-avatar" ici -->
-                  <%= link_to user_path(reservation.patient.id), class: "link-card-users" do %>
-                    <% if reservation.patient.photo.attached? %>
-                      <%= cl_image_tag reservation.patient.photo.key, crop: :fill, class: "avatar" %>
-                    <% else %>
-                      <%= image_tag("pp_default.png", class: "avatar") %>
-                    <% end %>
-                  <% end %>
-                </div>
 
-                 <div class="show-more">
-                    <%= link_to "Voir plus", user_path(reservation.patient.id) %>
-
-                  </div>
-
-
-
-                <div class="patient-name">
-                  <p><%= "#{reservation.patient.first_name.capitalize} #{reservation.patient.last_name.upcase}" %></p>
-                </div>
-                <div class="patient-details">
-                  <span>
-                    <i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6;"></i>
-                    <%= reservation.patient.email %>
-                  </span>
-                  <span>
-                    <i class="fa-solid fa-calendar-days" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
-                    <%= reservation.date %>
-                  </span>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+        <%= render "list-rdv" %>
       </div>
     </body>

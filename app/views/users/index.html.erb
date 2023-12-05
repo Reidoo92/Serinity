@@ -3,67 +3,37 @@
 <!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
 
 
-<% if current_user.role == 'doctor' %>
+<%# if current_user.role == 'doctor' %>
 
-  <div class="dashboard-index">
+  <%# <div class="dashboard-index"> %>
 
-    <%= render "shared/nav-dashboard" %>
+    <%#= render "shared/nav-dashboard" %>
 
-    <div class="index-container">
+    <%# <div class="index-container">
 
-    <div class="search-container" data-controller="search-users" data-search-users-target="lol" class="search-container">
+    <div class="search-container" data-controller="search-users" data-search-users-target="lol" class="search-container"> %>
 
-      <%= render "search" %>
+
 
 <% if current_user.role == 'doctor' %>
     <body class="patients-home">
 
       <%= render "shared/nav-dashboard" %>
 
-      <div class="main-content">
-        <h1>Mes patients<span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
-        <div class="patients-search">
-          <input type="text" placeholder="Recherchez un patient" class="recherche">
-        </div>
-        <div class="patients-container">
-          <% @patients.each do |patient| %>
-            <div class="patient-card">
-              <div class="patient-info">
-                <div class="patient-avatar"> <!-- Ajoutez la classe "patient-avatar" ici -->
-                  <%= link_to user_path(patient.id), class: "link-card-users" do %>
-                    <% if patient.photo.attached? %>
-                      <%= cl_image_tag patient.photo.key, crop: :fill, class: "avatar" %>
-                    <% else %>
-                      <%= image_tag("pp_default.png", class: "avatar") %>
-                    <% end %>
-                  <% end %>
-                </div>
+      <div data-controller="search-users" data-search_users_target="lol" class="main-content">
 
 
-                 <div class="show-more">
-                    <%= link_to "Voir plus", user_path(patient.id) %>
-
-                  </div>
+      <div class="top-index">
+        <h1 class="title-index">Mes patients  <span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
+        <%= render "search" %>
+      </div>
 
 
 
-                <div class="patient-name">
-                  <p><%= "#{patient.first_name.capitalize} #{patient.last_name.upcase}" %></p>
-                </div>
-                <div class="patient-details">
-                  <span>
-                    <i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6;"></i>
-                    <%= patient.email %>
-                  </span>
-                  <span>
-                    <i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
-                    <%= patient.number %>
-                  </span>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+
+
+        <%= render "list" %>
+
       </div>
     </body>
 <% end %>
@@ -83,7 +53,7 @@
 
       <%= render "search" %>
 
-      <h1>Psychologue</h1>
+      <h1>Psychologue<span class="counterpatient"><%= User.where(role: "doctor").count %></span></h1>
 
       <div class="index-card-containe-positionr">
 
