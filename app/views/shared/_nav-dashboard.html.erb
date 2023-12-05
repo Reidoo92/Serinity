@@ -13,7 +13,7 @@
               <%= image_tag("pp_default.png", class: "avatar") %>
             <% end %>
 
-            <%= "Dr #{current_user.last_name}" %>
+            <%= "Dr. #{current_user.last_name.upcase}" %>
           <% end %>
         </div>
 
