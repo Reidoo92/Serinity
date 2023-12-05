@@ -34,9 +34,15 @@
             <tbody>
                 <% @reservations.each do |reservation| %>
                     <tr>
-                        <td><%= "#{reservation.patient.first_name} #{reservation.patient.last_name}" %></td>
+                        <td><strong><%= "#{reservation.patient.first_name} #{reservation.patient.last_name}" %></strong></td>
                         <td><%= reservation.id %></td>
-                        <td><%= reservation.date.strftime('%Y-%m-%d') %></td>
+                        <td>
+                          <% if reservation.date.present? %>
+                            <%= reservation.date.strftime('%Y-%m-%d') %>
+                          <% else %>
+                            Date non spécifiée
+                          <% end %>
+                        </td>
                         <td><%= reservation.price %></td>
                     </tr>
                 <% end %>
