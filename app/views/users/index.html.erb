@@ -8,21 +8,21 @@
 
 
 <% if current_user.role == 'doctor' %>
-    <body class="patients-home">
+  <body class="patients-home">
 
-      <%= render "shared/nav-dashboard" %>
+    <%= render "shared/nav-dashboard" %>
 
-      <div data-controller="search-users" data-search_users_target="lol" class="main-content">
+    <div data-controller="search-users" data-search_users_target="lol" class="main-content">
 
-        <div class="top-index">
-          <h1 class="title-index"> Mes patients <span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
-          <%= render "search" %>
-        </div>
-
-        <%= render "list" %>
-
+      <div class="top-index">
+        <h1 class="title-index"> Mes patients <span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
+        <%= render "search" %>
       </div>
-    </body>
+
+      <%= render "list" %>
+
+    </div>
+  </body>
 <% end %>
 
 
@@ -40,13 +40,17 @@
     <div class="search-container">
 
       <%= render "shared/menu-burger" ,style: "z-index: 1000;"%>
+
       <div class="top-index-doctor">
+
         <h1>Psychologue<span class="counterpatient"><%= User.where(role: "doctor").count %></span></h1>
 
       </div>
-      <div class="mapbox-user-card">
 
-      <!-- ------------------------------------- MapBox ------------------------------------- -->
+
+      <!-- ------------------------------------- MapBox + render du html de la list des docteurs ------------------------------------- -->
+
+      <div class="mapbox-user-card">
 
         <div style="width: 1000px; height: 600px;"
             data-controller="map"
@@ -54,11 +58,12 @@
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
 
-      <!-- ------------------------------------- MapBox ------------------------------------- -->
-
         <%= render "list-index-doctor" %>
 
       </div>
+
+      <!-- ------------------------------------- MapBox ------------------------------------- -->
+
     </div>
   </div>
 <% end %>
