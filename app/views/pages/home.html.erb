@@ -209,7 +209,7 @@
                   <h3><strong>Mes patients</strong></h1>
                   <div class="icon-info-card">
                     <i class="fa-solid fa-hospital-user"></i>
-                    <strong><p><%= Reservation.where(doctor_id: current_user).count %></p></strong>
+                    <strong><p><%= Reservation.where(doctor_id: current_user).uniq{|patient| patient.id}.count %></p></strong>
                   </div>
                 </div>
 
