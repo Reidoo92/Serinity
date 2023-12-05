@@ -1,7 +1,12 @@
 {
   "dependencies": {
+
     "@rails/ujs": "^7.1.2",
     "ionicons": "^5.0.1",
+
+
+    "chart.js": "^4.4.0",
+
     "stimulus": "^3.2.2"
   }
 }

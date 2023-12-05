@@ -190,6 +190,7 @@
 
 <!-- ---------------- Dashboard du docteur ---------------- -->
 
+
     <% if @user.present? %>
       <% if @user.role == "doctor" %>
 
@@ -206,8 +207,11 @@
               <%= link_to users_path do %>
 
                 <div class="card-top">
-                  <h3><strong>Patients</strong></h1>
-                  <strong><%= Reservation.where(doctor_id: current_user).count %></strong>
+                  <h3><strong>Mes patients</strong></h1>
+                  <div class="icon-info-card">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    <strong><p><%= Reservation.where(doctor_id: current_user).count %></p></strong>
+                  </div>
                 </div>
 
               <% end %>
@@ -216,7 +220,7 @@
 
                 <div class="card-top">
                   <h3><strong>Consultations précédentes</strong></h3>
-                  <strong><%= Reservation.where(doctor_id: current_user).where("date < ?", Date.today).count %></strong>
+                  <strong><p><%= Reservation.where(doctor_id: current_user).where("date < ?", Date.today).count %></p></strong>
                 </div>
 
                <% end %>
@@ -224,8 +228,8 @@
               <%= link_to upcoming_reservations_path(current_user)  do %>
 
                 <div class="card-top">
-                  <h3><strong>Prochaines consultations</strong></h3>
-                  <strong><%= Reservation.where(doctor_id: current_user).where("date > ?", Date.today).count %></strong>
+                  <h3><strong>Mes prochains rendez-vous</strong></h3>
+                  <strong><p><%= Reservation.where(doctor_id: current_user).where("date > ?", Date.today).count %></p></strong>
                 </div>
 
                <% end %>
@@ -235,13 +239,14 @@
                 <div class="card-top">
                   <h3><strong>Chiffre d'affaires</strong></h3>
                   <div class="chiffre-affaire">
-                    <p><strong>3783€</strong><p>
+                    <p><strong>3850€</strong><p>
                     <p class="pourcent-up">+7,03%</p>
                   </div>
                 </div>
 
                <% end %>
             </div>
+
 
 
           <!-- Div pour les 2 carte du milieux "Catégorie de patients" et "consultation de la semaine" -->
@@ -316,49 +321,13 @@
                 </div>
               </div>
             </div>
-
-
-            <!-- Div pour l'activité du mois -->
-
-            <div>
-
-            </div>
-
-
-
-
-
+           <div class="month-activity-card">
+               <h3>Activité par mois</h3>
+                <div class="chart-container">
+                  <!-- TABLEAAU A CODER -->
+                </div>
+           </div>
           </div>
-
-
-
-
         </div>
       <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ---------------- Home patient et non connecter ---------------- -->
-
-
-      <% if @user.role == "patient" || current_user == nil%>
-        <div class="test-patient">
-        </div>
-        <div>
-
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 </body>

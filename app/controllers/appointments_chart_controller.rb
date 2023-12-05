@@ -1,0 +1,2 @@
+class AppointmentsChartController < ApplicationController
+end

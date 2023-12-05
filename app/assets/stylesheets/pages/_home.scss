@@ -1,3 +1,7 @@
+body {
+  background-color: #ecf0f1;
+}
+
 .background-image {
   width: 100%;
   height: 100%;
@@ -27,8 +31,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* Couleur du texte sur l'image */
-  text-align: center; /* Alignement du texte dans le centre */
+  color: white;
+  text-align: center;
 }
 
 .btn-rdv {
@@ -43,8 +47,8 @@
 .btn-rdv a {
   border-radius: 8px;
   opacity: 0.7;
-  overflow: hidden; // Assure que le contenu débordant n'est pas visible
-  position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
+  overflow: hidden;
+  position: relative;
   transition: transform 0.3s ease;
 }
 
@@ -60,9 +64,10 @@
   display: flex;
   flex-direction: row;
   gap: 56px;
-  background-color: white;
+  background-color: #ecf0f1;
   height: 100vh;
   overflow-y: hidden;
+  font-family: 'Arial', sans-serif;
 }
 
 .li-space {
@@ -73,7 +78,7 @@
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin: 30px;
 }
 
 .pourcent-up {
@@ -88,7 +93,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 120px;
+  height: 97px;
 }
 
 .card-container a {
@@ -104,17 +109,38 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba($color: #c9f0ff, $alpha: 0.3);
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 220px;
-  border-radius: 16px;
+  border-radius: 6px;
   padding: 10px;
+
   overflow: hidden; // Assure que le contenu débordant n'est pas visible
   position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+  border: 2px solid transparent;
+}
+
+.card-top h3 {
+  font-size: 1.2em;
+
+}
+
+.icon-info-card {
+  display: flex;
+  gap: 5px;
+}
+
+.icon-info-card p,
+.icon-info-card i {
+  color: #666;
+
+
 }
 
 .card-top:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  border-color: #2c3e50;
 }
 
 .chiffre-affaire {
@@ -130,22 +156,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 50px;
   gap: 50px;
 }
 
 .patient-type-card {
   background-color: rgba($color: #c9f0ff, $alpha: 0.3);
   width: 650px;
-  border-radius: 32px;
+  border-radius: 8px;
   padding: 20px;
   overflow: hidden; // Assure que le contenu débordant n'est pas visible
   position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+
 }
 
 .patient-type-card:hover {
-  transform: scale(1.07);
+  transform: scale(1.04);
 }
 
 .patient-container {
@@ -176,15 +202,18 @@
 
 .week-reservation-card {
   background-color: rgba($color: #c9f0ff, $alpha: 0.3);
-  border-radius: 32px;
+  border-radius: 8px;
   padding: 20px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+  width: 25%;
+  height: 320px
+
 }
 
 .week-reservation-card:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .li-week {
@@ -228,4 +257,85 @@
 }
 .thirty-percents {
   background-color: #ffffff;
+}
+
+
+.card-container .card-top {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.card-container .card-top:hover {
+  background-color: #e2e2e2;
+}
+
+.card-container h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-container span {
+  display: block;
+  font-size: 1.5em;
+  color: #666;
+}
+
+.percentage-up {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.middle-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.patient-type-card, .week-reservation-card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.patient-type-card h3, .week-reservation-card h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.patient-type-card {
+  height: 280px;
+}
+
+
+// #--------->
+
+.month-activity-card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  height: 315px;
+}
+
+.month-activity-card h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.chart-container {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.chart-container img {
+  width: 100%;
+  height: auto;
 }

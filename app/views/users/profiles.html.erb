@@ -1,47 +1,46 @@
-<div class="container-paiement">
-   <%= render "shared/nav-dashboard" %>
-
-  <div class="cards-paiement">
-
-
-
-    <div class="prix-reservation">
-      <p>Prix de Reservation : 50€</p>
-      <p>Solde : <%= @doctor.balance %>
-    </div>
-
-
-
-
-    <div class="container-graphique-paiement">
-
-      <div class="container-graph">
-
-
-        <div class="graph-price">
-          <p>5000</p>
-          <p>4000</p>
-          <p>3000</p>
-          <p>2000</p>
-          <p>1000</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résumé des Transactions - Dr Michaud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="transactions-home">
+  <%= render "shared/nav-dashboard" %>
+    <div class="main-content">
+        <h1>Mes paiements</h1>
+        <div class="transactions-filter">
+            <input type="text" placeholder="Recherche" class="recherche">
+            <div class="filter-group">
+                <select id="time-period">
+                    <option value="all-time">Toutes les transactions</option>
+                    <option value="today">Aujourd'hui</option>
+                    <option value="this-month">Hier</option>
+                    <option value="this-week">Cette semaine</option>
+                    <option value="this-month">La semaine dernière</option>
+                    <option value="this-month">Ce mois</option>
+                </select>
+            </div>
         </div>
-
-        <div class ="container-visu-graph">
-
-          <div class="visu-graph">
-            visu
-          </div>
-
-          <div class="date-graph">
-            date
-          </div>
-
-        </div>
-
-      </div>
-
+        <table>
+            <thead>
+                <tr class="haut-tableur">
+                    <th>NOM</th>
+                    <th>N° RESERVATION</th>
+                    <th>DATE</th>
+                    <th>PRIX</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @reservations.each do |reservation| %>
+                    <tr>
+                        <td><%= "#{reservation.patient.first_name} #{reservation.patient.last_name}" %></td>
+                        <td><%= reservation.id %></td>
+                        <td><%= reservation.date.strftime('%Y-%m-%d') %></td>
+                        <td><%= reservation.price %></td>
+                    </tr>
+                <% end %>
+            </tbody>
     </div>
-
-
-  </div>
-</div>
+</body>
+</html>
