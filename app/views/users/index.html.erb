@@ -10,42 +10,20 @@
 
     <div class="index-container">
 
-    <div class="search-container">
+    <div class="search-container" data-controller="search-users" data-search-users-target="lol" class="search-container">
 
-    <%= render "search" %>
+      <%= render "search" %>
 
 
       <h1>Patients</h1>
 
-      <div class="index-card-containe-positionr">
 
-        <div class="index-card-container">
-          <% @patients.each do |patient| %>
-            <div class="index-card">
 
-              <%= link_to user_path(patient.id), class: "link-card-users" do %>
+      <%= render "list" %>
 
-                <% if patient.photo.attached?  %>
-                  <%= cl_image_tag patient.photo.key, crop: :fill %>
-                <% else %>
-                  <%= image_tag("pp_default.png") %>
-                <% end %>
 
-                <div class="user-info-index">
-                  <div class="user-name-age">
-                    <p><%= patient.first_name %></p>
-                    <p><%= patient.last_name.capitalize %></p>
-                    <p><%= patient.age %> ans</p>
-                  </div>
-                  <div class="user-num-info">
-                    <p><%= patient.number %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
+
+
     </div>
   </div>
 <% end %>

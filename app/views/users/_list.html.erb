@@ -1,0 +1,26 @@
+<div data-search-users-target= "list" class="index-card-container">
+  <% @patients.each do |patient| %>
+    <div class="index-card">
+
+      <%= link_to user_path(patient.id), class: "link-card-users" do %>
+
+        <% if patient.photo.attached?  %>
+          <%= cl_image_tag patient.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag("pp_default.png") %>
+        <% end %>
+
+        <div class="user-info-index">
+          <div class="user-name-age">
+            <p><%= patient.first_name %></p>
+            <p><%= patient.last_name.capitalize %></p>
+            <p><%= patient.age %> ans</p>
+          </div>
+          <div class="user-num-info">
+            <p><%= patient.number %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

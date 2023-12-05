@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@rails/ujs": "^7.1.2",
     "ionicons": "^5.0.1",
     "stimulus": "^3.2.2"
   }
