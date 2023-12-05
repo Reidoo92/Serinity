@@ -108,33 +108,37 @@ body {
 .card-top {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   background-color: #f2f2f2;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 220px;
   border-radius: 6px;
   padding: 10px;
-
   overflow: hidden; // Assure que le contenu débordant n'est pas visible
   position: relative; // Position relative pour que l'élément enfant positionné absolument soit relatif à celui-ci
   transition: transform 0.5s ease;
   border: 2px solid transparent;
+  height: 88px;
 }
 
 
 .card-top h3 {
   font-size: 1.2em;
-
 }
 
 .icon-info-card {
   display: flex;
+  position: absolute;
+  opacity: 0.7;
   gap: 5px;
+  bottom: 8px;
+  left: 14px;
+  height: 20px;
 }
 
-.icon-info-card p,
 .icon-info-card i {
-
+  display: flex;
+  align-items: flex-end;
 }
 
 .card-top:hover {
