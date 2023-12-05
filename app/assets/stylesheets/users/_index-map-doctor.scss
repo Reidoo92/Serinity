@@ -1,0 +1,26 @@
+
+
+
+
+.mapbox-user-card {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 80px;
+}
+
+
+.doctors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.top-index-doctor {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 48px;
+}
+
+.doctors-container .search-input {
+  width: 273px;
+}

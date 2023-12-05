@@ -1,17 +1,9 @@
 
 
+
+
 <!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
 
-
-<%# if current_user.role == 'doctor' %>
-
-  <%# <div class="dashboard-index"> %>
-
-    <%#= render "shared/nav-dashboard" %>
-
-    <%# <div class="index-container">
-
-    <div class="search-container" data-controller="search-users" data-search-users-target="lol" class="search-container"> %>
 
 
 
@@ -22,21 +14,17 @@
 
       <div data-controller="search-users" data-search_users_target="lol" class="main-content">
 
-
-      <div class="top-index">
-        <h1 class="title-index">Mes patients  <span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
-        <%= render "search" %>
-      </div>
-
-
-
-
+        <div class="top-index">
+          <h1 class="title-index"> Mes patients <span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>
+          <%= render "search" %>
+        </div>
 
         <%= render "list" %>
 
       </div>
     </body>
 <% end %>
+
 
 
 
@@ -51,15 +39,16 @@
 
     <div class="search-container">
 
-      <%= render "search" %>
+      <%= render "shared/menu-burger" ,style: "z-index: 1000;"%>
+      <div class="top-index-doctor">
+        <h1>Psychologue<span class="counterpatient"><%= User.where(role: "doctor").count %></span></h1>
 
-      <h1>Psychologue<span class="counterpatient"><%= User.where(role: "doctor").count %></span></h1>
-
-      <div class="index-card-containe-positionr">
+      </div>
+      <div class="mapbox-user-card">
 
       <!-- ------------------------------------- MapBox ------------------------------------- -->
 
-        <div style="width: 500px; height: 400px;"
+        <div style="width: 1000px; height: 600px;"
             data-controller="map"
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -67,32 +56,8 @@
 
       <!-- ------------------------------------- MapBox ------------------------------------- -->
 
-        <div class="index-card-container">
-          <% @doctors.each do |doctor| %>
-            <div class="index-card">
+        <%= render "list-index-doctor" %>
 
-              <%= link_to user_path(doctor.id), class: "link-card-users" do %>
-
-                <% if doctor.photo.attached?  %>
-                  <%= cl_image_tag doctor.photo.key, crop: :fill %>
-                <% else %>
-                  <%= image_tag("pp_default.png") %>
-                <% end %>
-
-                <div class="user-info-index">
-                  <div class="user-name-age">
-                    <p><%= doctor.first_name %></p>
-                    <p><%= doctor.last_name.capitalize %></p>
-                    <p><%= doctor.age %> ans</p>
-                  </div>
-                  <div class="user-num-info">
-                    <p><%= doctor.number %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>

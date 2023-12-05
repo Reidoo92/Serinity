@@ -190,17 +190,26 @@
 <!-- ---------------- Dashboard du docteur ---------------- -->
 
 
+
     <% if @user.present? %>
       <% if @user.role == "doctor" %>
 
         <div class="dashboard">
 
-          <!-- Div pour la Navbar de gauche-->
+
+<!-- ------------------ Div pour la Navbar de gauche -------------------->
+
+
+
           <%= render "shared/nav-dashboard" %>
 
           <div class="dashboard-container">
 
-            <!-- Div pour les 4 carte du haut du dashboard de Patient à Chiffre d'affaires -->
+
+
+<!-- ------------------ Div pour les 4 carte du haut du dashboard de Patient à Chiffre d'affaires ------------------ -->
+
+
             <div class="card-container">
 
               <%= link_to users_path do %>
@@ -248,7 +257,10 @@
 
 
 
-          <!-- Div pour les 2 carte du milieux "Catégorie de patients" et "consultation de la semaine" -->
+<!-- ---------------- Div pour les 2 carte du milieux "Catégorie de patients" et "consultation de la semaine" ---------------- -->
+
+
+
             <div class="midle-container">
 
               <div class="patient-type-card">
