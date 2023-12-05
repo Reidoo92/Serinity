@@ -190,6 +190,7 @@
 
 <!-- ---------------- Dashboard du docteur ---------------- -->
 
+
     <% if @user.present? %>
       <% if @user.role == "doctor" %>
 
@@ -245,6 +246,7 @@
 
                <% end %>
             </div>
+
 
 
           <!-- Div pour les 2 carte du milieux "Catégorie de patients" et "consultation de la semaine" -->
@@ -319,49 +321,13 @@
                 </div>
               </div>
             </div>
-
-
-            <!-- Div pour l'activité du mois -->
-
-            <div>
-
-            </div>
-
-
-
-
-
+           <div class="month-activity-card">
+               <h3>Activité par mois</h3>
+                <div class="chart-container">
+                  <!-- TABLEAAU A CODER -->
+                </div>
+           </div>
           </div>
-
-
-
-
         </div>
       <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ---------------- Home patient et non connecter ---------------- -->
-
-
-      <% if @user.role == "patient" || current_user == nil%>
-        <div class="test-patient">
-        </div>
-        <div>
-
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 </body>

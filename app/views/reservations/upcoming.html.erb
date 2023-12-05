@@ -6,7 +6,9 @@
       <%= render "shared/nav-dashboard" %>
 
       <div class="main-content">
+
         <h1>Mes rendez-vous<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).where("date >= ?", Date.today).count %></span></h1>
+
         <div class="patients-search">
           <input type="text" placeholder="Recherchez un patient" class="recherche">
         </div>
