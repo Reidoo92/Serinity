@@ -1,157 +1,65 @@
-/*------------------ container de la show ------------------*/
-
-.show-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-  gap: 80px;
-  background-color: white;
-  padding-left: 64px;
-}
-
-.show-container-patient {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-  gap: 80px;
-  background-color: white;
-  padding-left: 250px;
-}
-
-/*------------------ haut de la show ------------------*/
-
-.user-card {
+.main-container-show {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  background-color: rgba($color: #e7bac9, $alpha: 0.3);
-  border-radius: 16px;
-  width: 640px;
 }
 
-.user-img img {
-height: 100%;
-width: 100%;
-border-radius: 16px 0px 0px 16px;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  align-items: center;
-  gap: 40px;
-  padding: 17px 0px 0px 40px;
-}
-
-.user-info p {
-  margin: 0px !important;
-}
-
-.user-name-age {
-  display: flex;
-  flex-direction: column;
+.container-show {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  width: 100px !important;
+  margin: 10px;
+  margin-left: 165px;
+  flex-direction: row-reverse;
 }
 
-.user-num-adress {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 320px;
+.box1, .box2 {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
-/*------------------ bas de la show ------------------*/
-
-.user-reservation {
-  display: flex;
-  flex-direction: row;
-  gap: 48px;
-}
-
-.user-description {
-  background-color: rgba($color: #e7bac9, $alpha: 0.3);
-  border-radius: 16px;
-  width: 400px;
-  padding: 30px;
-}
-
-.input-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 58px;
-  gap: 40px;
-}
-
-.boutton-valider {
-  height: 64px;
-  width: 320px;
-  border-radius: 10px;
+.button-validate button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
   border: none;
-}
-
-/*-----------------------------------------------------------*/
-
-.index-card-show {
-  display: flex;
-  flex-direction: row;
-}
-
-.position-info-card {
+  cursor: pointer;
   width: 100%;
-  height: 100;
+  transition: background-color 0.3s ease;
 }
 
-.primary-info-card {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.button-validate button:hover {
+  background-color: #46a049;
 }
 
-.primary-info-card p {
-  height: 33%;
+.saisissez {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
 }
 
-.secondary-info-card {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.box2 {
+  height: 320px;
 }
 
-.secondary-info-card p {
-  height: 50%;
+.box-map {
+  border: 1px solid #ddd; /* Example border */
+  padding: 0; /* Remove padding if you want the map to take the whole box */
+  text-align: center;
+  height: 320px;
+  width: 377px;
 }
 
-.container-bot-show {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-}
-/*--------------------card Description--------------------*/
-.description-profil {
-  width: 50%;
-  border-radius: 10px;
-}
 
-/*--------------------card Reservation--------------------*/
-.reservation {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  margin-left: 10px;
-  border-radius: 10px;
-}
-
-.reservation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 44px;
+.map-box {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  box-sizing: border-box; /* Include padding and border in the width and height */
+  /* Additional styles for the map can go here */
 }

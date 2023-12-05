@@ -1,87 +1,57 @@
-
-
-  <!-- ---------------------Afichage du doctor-------------------------- -->
-
-
-<div class="dashboard-index">
-
-  <% if current_user.role == 'doctor' %>
-    <%= render "shared/nav-dashboard" %>
-
-    <div class="show-container">
-      <div class="user-card">
-        <div class="user-img">
-          <% if @user.photo.attached?  %>
-            <%= cl_image_tag @user.photo.key, crop: :fill %>
-          <% else %>
-            <%= image_tag("pp_default.png") %>
-          <% end %>
-        </div>
-
-        <div class="user-info">
-          <div class="user-name-age">
-            <p><%= @user.first_name  %></p>
-            <p><%= @user.last_name %></p>
-            <p><%= @user.age %> ans</p>
-          </div>
-
-          <div class="user-num-adress">
-            <p><%= @user.number %></p>
-            <p><%= @user.adress %></p>
-          </div>
+<!-- ---------------------Afichage du doctor-------------------------- -->
+<div class="main-container-show">
+  <%= render "shared/nav-dashboard" %>
+  <div class="container-show">
+    <% if current_user.role == 'doctor' %>
+      <div class="box-map">
+        <div style="width: 377px; height: 320px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-
-      <div class="user-reservation">
-        <div class="user-description">
-          <%= current_user.description %>
-        </div>
-
-        <div class=""></div>
-
-
-        <% if  current_user != @user %>
-
-
-
-
-          <div class="calender">
-            <%= simple_form_for [@user, @reservation] do |f|%>
+      <div class="box1">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag("pp_default.png") %>
+        <% end %>
+        <p><%= @user.first_name %></p>
+        <p><strong><%= @user.last_name.upcase %></strong></p>
+        <p><%= @user.age %> ans</p>
+        <p><i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; padding-right: 4px; opacity: 0.6;"></i><%= @user.number %></p>
+        <p><i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; padding-right: 4px; opacity: 0.6;"></i><%= @user.email %></p>
+        <p><i class="fas fa-map-marker-alt" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; padding-right: 4px; opacity: 0.6;"></i><%= @user.adress %></p>
+      </div>
+      <% if current_user != @user %>
+        <div class="box2">
+          <div class="calendar">
+            <%= simple_form_for [@user, @reservation] do |f| %>
               <%= f.input :date,
                           as: :string,
                           input_html: { data: { controller: "datepicker" }, hidden: true },
                           label: false %>
-
-              </div>
-                <div class="input-right">
-                  <div class="input-price">
-                    <% if current_user.role == "doctor" %>
-                      <%= f.input :price,
-                                  as: :string,
-                                  input_html: { class: 'form-control', placeholder: 'Saisissez le prix' },
-                                  label: false %>
-
-                    <% end %>
-                  </div>
-
-                  <div class="boutton-valider">
-                    <button type="submit" class="boutton-valider">Valider le rendez-vous</button>
-                  </div>
-                </div>
-            <% end %>
-
-
-
-        <% end %>
-      </div>
-    </div>
+          </div>
+          <div class="input-right">
+            <div class="input-price">
+              <% if current_user.role == "doctor" %>
+                <%= f.input :price,
+                            as: :string,
+                            input_html: { class: 'saisissez', placeholder: 'Saisissez le prix' },
+                            label: false %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="button-validate">
+          <button type="submit" class="button-validate">Validez le rendez-vous</button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-
   <% else %>
-
-
-
 
   <!-- ---------------------------------------Affichage du patient------------------------------------ -->
 
