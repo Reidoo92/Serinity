@@ -129,7 +129,7 @@ galaad = User.create(
   password: 'galaad@gmail.com',
   first_name: 'Galaad',
   last_name: 'Michaud',
-  age: 15,
+  age: 17,
   number: '0612345678',
   adress: '17 Rue Dupetit-Thouars, 75003 Paris',
   speciality: 'Psychologue',
@@ -228,6 +228,176 @@ guillaume = User.create(
 )
 image_path = Rails.root.join('app', 'assets', 'images', 'pp_guillaume_enfant.jpg')
 guillaume.photo.attach(io: File.open(image_path), filename: 'pp_guillaume_enfant.jpg', content_type: 'image/jpeg')
+
+marine = User.create(
+  email: 'marine@gmail.com',
+  password: 'marine@gmail.com',
+  first_name: 'Marine',
+  last_name: 'Vançon',
+  age: 9,
+  number: '0711675452',
+  adress: '13 Rue des Lions Saint-Paul, 75004 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_marine_enfant.jpg')
+marine.photo.attach(io: File.open(image_path), filename: 'pp_marine_enfant.jpg', content_type: 'image/jpeg')
+
+amelia = User.create(
+  email: 'amelia@gmail.com',
+  password: 'amelia@gmail.com',
+  first_name: 'amelia',
+  last_name: 'Lelouche',
+  age: 19,
+  number: '0656967452',
+  adress: '6 Rue Neuve Popincourt, 75011 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_amelia_enfant.jpg')
+amelia.photo.attach(io: File.open(image_path), filename: 'pp_amelia_enfant.jpg', content_type: 'image/jpeg')
+
+mahmoud = User.create(
+  email: 'mahmoud@gmail.com',
+  password: 'mahmoud@gmail.com',
+  first_name: 'Lajimi',
+  last_name: 'Mahmoud',
+  age: 14,
+  number: '0655389052',
+  adress: '11 Rue Baron, 75017 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_mahmoud_enfant.jpg')
+mahmoud.photo.attach(io: File.open(image_path), filename: 'pp_mahmoud_enfant.jpg', content_type: 'image/jpeg')
+
+nathan = User.create(
+  email: 'nathan@gmail.com',
+  password: 'nathan@gmail.com',
+  first_name: 'nathan',
+  last_name: 'Benette',
+  age: 15,
+  number: '0609675452',
+  adress: '10 Rue Puget, 75018 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_nathan_enfant.jpg')
+nathan.photo.attach(io: File.open(image_path), filename: 'pp_nathan_enfant.jpg', content_type: 'image/jpeg')
+
+lisa = User.create(
+  email: 'lisa@gmail.com',
+  password: 'lisa@gmail.com',
+  first_name: 'lisa',
+  last_name: 'Jenkins',
+  age: 18,
+  number: '0711217852',
+  adress: '15 Rue Albéric Magnard, 75116 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_lisa_enfant.jpg')
+lisa.photo.attach(io: File.open(image_path), filename: 'pp_lisa_enfant.jpg', content_type: 'image/jpeg')
+
+titouan = User.create(
+  email: 'titouan@gmail.com',
+  password: 'titouan@gmail.com',
+  first_name: 'titouan',
+  last_name: 'Evans',
+  age: 14,
+  number: '0609675386',
+  adress: '8 Rue Paul Hervieu, 75015 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_titouan_enfant.jpg')
+titouan.photo.attach(io: File.open(image_path), filename: 'pp_titouan_enfant.jpg', content_type: 'image/jpeg')
+
+emma = User.create(
+  email: 'emma@gmail.com',
+  password: 'emma@gmail.com',
+  first_name: 'emma',
+  last_name: 'Davidson',
+  age: 12,
+  number: '0647275452',
+  adress: '7 Pl. de Fontenoy, 75007 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_emma_enfant.jpg')
+emma.photo.attach(io: File.open(image_path), filename: 'pp_emma_enfant.jpg', content_type: 'image/jpeg')
+
+julie = User.create(
+  email: 'julie@gmail.com',
+  password: 'julie@gmail.com',
+  first_name: 'julie',
+  last_name: 'Lefèvre',
+  age: 14,
+  number: '0613427545',
+  adress: '8B Rue Monmory, 94300 Vincennes',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_julie_enfant.jpg')
+julie.photo.attach(io: File.open(image_path), filename: 'pp_julie_enfant.jpg', content_type: 'image/jpeg')
+
+morgane = User.create(
+  email: 'morgane@gmail.com',
+  password: 'morgane@gmail.com',
+  first_name: 'morgane',
+  last_name: 'Moreau',
+  age: 13,
+  number: '0607555452',
+  adress: '111 Rue Sadi Carnot, 93170 Bagnolet',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_morgane_enfant.jpg')
+morgane.photo.attach(io: File.open(image_path), filename: 'pp_morgane_enfant.jpg', content_type: 'image/jpeg')
+
+maxime = User.create(
+  email: 'maxime@gmail.com',
+  password: 'maxime@gmail.com',
+  first_name: 'maxime',
+  last_name: 'Mercier',
+  age: 18,
+  number: '0749663352',
+  adress: '10 Rue du Château d eau, 75010 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_maxime_enfant.jpg')
+maxime.photo.attach(io: File.open(image_path), filename: 'pp_maxime_enfant.jpg', content_type: 'image/jpeg')
+
+stephanie = User.create(
+  email: 'stephanie@gmail.com',
+  password: 'stephanie@gmail.com',
+  first_name: 'stephanie',
+  last_name: 'Reynaud',
+  age: 18,
+  number: '0609674402',
+  adress: '12 Rue de Beaune, 75007 Paris',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_stephanie_enfant.jpg')
+stephanie.photo.attach(io: File.open(image_path), filename: 'pp_stephanie_enfant.jpg', content_type: 'image/jpeg')
+
+rayhan = User.create(
+  email: 'rayhan@gmail.com',
+  password: 'rayhan@gmail.com',
+  first_name: 'rayhan',
+  last_name: 'Chaoui',
+  age: 16,
+  number: '0609666342',
+  adress: '1 Rue de la Clef des Champs, 93400 Saint-Ouen-sur-Seine',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_rayhan_enfant.jpg')
+rayhan.photo.attach(io: File.open(image_path), filename: 'pp_rayhan_enfant.jpg', content_type: 'image/jpeg')
+
+iness = User.create(
+  email: 'iness@gmail.com',
+  password: 'iness@gmail.com',
+  first_name: 'iness',
+  last_name: 'Ben Youssef',
+  age: 20,
+  number: '0709345452',
+  adress: '64 Rue Jules Guesde, 92300 Levallois-Perret',
+  role: 'patient'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_iness_enfant.jpg')
+iness.photo.attach(io: File.open(image_path), filename: 'pp_iness_enfant.jpg', content_type: 'image/jpeg')
+
 
 # Création des réservations passées
 puts 'Creating PAST Reservations...'

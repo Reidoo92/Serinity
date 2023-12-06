@@ -51,8 +51,43 @@
   margin-bottom: 20px;
 }
 
+.search-solde {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-solde p {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.solde-paiement {
+ padding-top: 10px;
+}
+
 .recherche {
   height: 42px;
+}
+
+.table-container {
+  max-height: 300px; /* ajustez la hauteur maximale selon vos besoins */
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
 }
 
 .haut-tableur {

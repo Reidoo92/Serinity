@@ -3,7 +3,12 @@
       <div class="main-content">
           <h1>Mes paiements</h1>
           <div class="transactions-filter">
+            <div class="search-solde">
               <input type="text" placeholder="Recherche" class="recherche">
+              <div class="solde-paiement">
+                <p>Mon solde : <strong>950 €</strong></p>
+              </div>
+            </div>
               <div class="filter-group">
                   <select id="time-period">
                       <option value="all-time">Toutes les transactions</option>
@@ -15,7 +20,7 @@
                   </select>
               </div>
           </div>
-          <table>
+          <table class="table-container">
               <thead>
                   <tr class="haut-tableur">
                       <th class="th-first">NOM</th>
@@ -47,6 +52,6 @@
 
                 </tbody>
               </div>
-
+            </table>
       </div>
   </div>
