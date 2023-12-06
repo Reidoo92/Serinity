@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :doctor_reservations, class_name: 'Reservation', foreign_key: 'doctor_id'
   has_many :patient_reservations, class_name: 'Reservation', foreign_key: 'patient_id'
 
-  validates :first_name, :last_name, :email, :number, :address, :age, :role, presence: true
+  validates :first_name, :last_name, :email, :number, :adress, :age, :role, presence: true
   validates :email, :number, uniqueness: true
   validates :role, inclusion: { in: %w(doctor patient) }
 
