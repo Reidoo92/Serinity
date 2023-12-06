@@ -402,7 +402,7 @@ iness.photo.attach(io: File.open(image_path), filename: 'pp_iness_enfant.jpg', c
 # Création des réservations passées
 puts 'Creating PAST Reservations...'
 
-26.times do
+46.times do
   Reservation.create(
     date: Faker::Date.between(from: '2023-11-10', to: '2023-12-17'),
     price: 50,
@@ -414,7 +414,7 @@ end
 # Création des réservations futures
 puts 'Creating UPCOMING Reservations...'
 
-34.times do
+67.times do
   Reservation.create(
     date: Faker::Date.between(from: '2023-12-10', to: '2024-02-01'),
     price: 50,
