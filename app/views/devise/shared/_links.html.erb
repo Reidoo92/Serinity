@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name), class: "button-signup" %><br />
+  <%= link_to "Se connecter", new_session_path(resource_name), class: "button-signup" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "button-login"%><br />
+  <%= link_to "S'inscrire", new_registration_path(resource_name), class: "button-login"%><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
