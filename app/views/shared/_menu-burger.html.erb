@@ -2,7 +2,9 @@
   <div  data-navbar-target="togglableElement" id="mySidenav" class="sidenav">
     <p id="closeBtn" class="close" data-action="click->navbar#closeMenu">x</p>
     <ul>
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% unless current_user.present? %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
 
 
       <% if current_user %>

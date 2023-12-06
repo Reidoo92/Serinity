@@ -131,19 +131,44 @@ th {
   justify-content: center;
   gap: 20px; /* Adjust the space between cards */
   margin-left: 2px;
-  margin-top: 48px;
+  margin-top: 32px;
+  padding-top: 30px;
+  height: 580px;
+  overflow: auto;
 }
 
-.patient-card {
-  background-color: #f2f2f2;
+/*--------------- scrollbar ---------------*/
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #496784;
   border-radius: 6px;
+  transition: transform 0.4s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2c3e50;
+}
+
+* {
+  scrollbar-arrow-color: #555;
+}
+
+/*--------------- scrollbar ---------------*/
+
+.patient-card {
+  position: relative;
+  background-color: #f2f2f2;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s, border-color 0.2s; /* Ajoutez une transition pour l'effet de zoom et la couleur de bordure */
+  border: 2px solid transparent; /* Ajoutez une transition pour l'effet de zoom */
+  border-radius: 6px;
   padding: 13px;
   width: 272px; /* Adjust card width as needed */
   height: 105px;
-  transition: transform 0.4s, border-color 0.2s; /* Ajoutez une transition pour l'effet de zoom et la couleur de bordure */
-  border: 2px solid transparent; /* Ajoutez une transition pour l'effet de zoom */
-  position: relative;
 }
 
 .patient-card:hover {
