@@ -53,3 +53,25 @@ body.no-navbar .navbar {
   width: 48%;
   margin-bottom: 10px;
 }
+
+.container-login-login {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100vh;
+  gap: 180px;
+  overflow: hidden;
+}
+
+.image-connexion img {
+  width: 900px;
+}
+
+.form-section {
+  background-color: #2c3e50;
+  padding: 200px 120px 0px 120px;
+  flex-grow: 1;
+}
+
+.boutton-login {
+  background-color: #bee3db;
+}
