@@ -1,52 +1,52 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Résumé des Transactions - Dr Michaud</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="transactions-home">
-  <%= render "shared/nav-dashboard" %>
-    <div class="main-content">
-        <h1>Mes paiements</h1>
-        <div class="transactions-filter">
-            <input type="text" placeholder="Recherche" class="recherche">
-            <div class="filter-group">
-                <select id="time-period">
-                    <option value="all-time">Toutes les transactions</option>
-                    <option value="today">Aujourd'hui</option>
-                    <option value="this-month">Hier</option>
-                    <option value="this-week">Cette semaine</option>
-                    <option value="this-month">La semaine dernière</option>
-                    <option value="this-month">Ce mois</option>
-                </select>
-            </div>
-        </div>
-        <table>
-            <thead>
-                <tr class="haut-tableur">
-                    <th>NOM</th>
-                    <th>N° RESERVATION</th>
-                    <th>DATE</th>
-                    <th>PRIX</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @reservations.each do |reservation| %>
-                    <tr>
-                        <td><strong><%= "#{reservation.patient.first_name} #{reservation.patient.last_name}" %></strong></td>
-                        <td><%= reservation.id %></td>
-                        <td>
-                          <% if reservation.date.present? %>
-                            <%= reservation.date.strftime('%Y-%m-%d') %>
-                          <% else %>
-                            Date non spécifiée
-                          <% end %>
-                        </td>
-                        <td><%= reservation.price %></td>
-                    </tr>
-                <% end %>
-            </tbody>
-    </div>
-</body>
-</html>
+  <div class="transactions-home">
+    <%= render "shared/nav-dashboard" %>
+      <div class="main-content">
+          <h1>Mes paiements</h1>
+          <div class="transactions-filter">
+              <input type="text" placeholder="Recherche" class="recherche">
+              <div class="filter-group">
+                  <select id="time-period">
+                      <option value="all-time">Toutes les transactions</option>
+                      <option value="today">Aujourd'hui</option>
+                      <option value="this-month">Hier</option>
+                      <option value="this-week">Cette semaine</option>
+                      <option value="this-month">La semaine dernière</option>
+                      <option value="this-month">Ce mois</option>
+                  </select>
+              </div>
+          </div>
+          <table>
+              <thead>
+                  <tr class="haut-tableur">
+                      <th class="th-first">NOM</th>
+                      <th>N° RESERVATION</th>
+                      <th>DATE</th>
+                      <th class="th-last">PRIX</th>
+                  </tr>
+              </thead>
+              <div class="tableur-paiement">
+                <tbody>
+                      <% @reservations
+                        .select { |reservation| reservation.date.present? && reservation.date < Date.today }
+                        .sort_by { |reservation| reservation.date }
+                        .reverse
+                        .each do |reservation| %>
+                        <tr>
+                            <td><strong><%= "#{reservation.patient.first_name} #{reservation.patient.last_name}" %></strong></td>
+                            <td><%= reservation.id %></td>
+                            <td>
+                              <% if reservation.date.present? %>
+                                <%= reservation.date.strftime('%d-%m-%Y') %>
+                              <% else %>
+                                N/A
+                              <% end %>
+                            </td>
+                            <td><%= reservation.price %></td>
+                        </tr>
+                      <% end %>
+
+                </tbody>
+              </div>
+
+      </div>
+  </div>
