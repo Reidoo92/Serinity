@@ -1,10 +1,15 @@
 <!-- ---------------------Afichage du doctor-------------------------- -->
 
+    <% if current_user.role == 'doctor' %>
 
 <div class="main-container-show">
-  <%= render "shared/nav-dashboard" %>
+
+
+    <%= render "shared/nav-dashboard" %>
+
+
+
   <div class="container-show">
-    <% if current_user.role == 'doctor' %>
 
 
       <div class="title-show">
@@ -41,11 +46,6 @@
 
 
       </div>
-
-
-
-
-
 
         <% if current_user != @user %>
 
@@ -101,63 +101,93 @@
 
   <% else %>
 
+
+
+
   <!-- ---------------------------------------Affichage du patient------------------------------------ -->
 
 
 
+<div class="main-container-show">
+      <div class="container-show">
+        <%= render "shared/menu-burger" %>
+      <div class="title-show">
+        <h1>Mon psychologue</h1>
+      </div>
 
-    <div class="show-container-patient">
-      <div class="user-card">
-        <div class="user-img">
-          <% if @user.photo.attached?  %>
+
+      <div class="info-show-user-top">
+
+        <div class="img-info-user">
+          <% if @user.photo.attached? %>
             <%= cl_image_tag @user.photo.key, crop: :fill %>
           <% else %>
             <%= image_tag("pp_default.png") %>
           <% end %>
+
+          <p>
+            <strong><%= @user.first_name.upcase %></strong>
+            <strong><%= @user.last_name.upcase %></strong>
+          </p>
+
+          <p><%= @user.age %> ans</p>
+          <p><i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; padding-right: 4px; opacity: 0.6;"></i><%= @user.number %></p>
+          <p><i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; padding-right: 4px; opacity: 0.6;"></i><%= @user.email %></p>
+          <p><i class="fas fa-map-marker-alt" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; padding-right: 4px; opacity: 0.6;"></i><%= @user.adress %></p>
         </div>
 
-        <div class="user-info">
-          <div class="user-name-age">
-            <p><%= @user.first_name %></p>
-            <p><%= @user.last_name %></p>
-            <p><%= @user.age %> ans</p>
-          </div>
 
-          <div class="user-num-adress">
-            <p><%= @user.number %></p>
-            <p><%= @user.adress %></p>
-          </div>
+        <div class="mapbox-user-show" style="width: 500px; height: 240px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+
+
       </div>
 
-      <div class="user-reservation">
-        <div class="user-description">
-          description du profil
-        </div>
+        <% if current_user != @user %>
 
-        <div class=""></div>
+          <div class="calendar-user-show">
 
-          <% if  current_user != @user %>
+            <div class="calendar">
 
-        <div class="calender">
-          <%= simple_form_for  [@user, @reservation] do |f|%>
-            <%= f.input :date,
-                        as: :string,
-                        input_html: { data: { controller: "datepicker" }, hidden: true },
-                        label: false %>
-            <% end %>
-        </div>
+              <%= simple_form_for [@user, @reservation] do |f| %>
+                <%= f.input :date,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker" }, hidden: true },
+                            label: false %>
 
-        <div class="input-right">
-          <div class="input-price">
-            <p><%= @reservation.price %></p>
+            </div>
+
+                <div class="input-reservation">
+
+                  <div class="input-price">
+
+
+                    <% if current_user.role == "doctor" %>
+                      <%= f.input :price,
+                                  as: :string,
+                                  input_html: { class: 'saisissez', placeholder: 'Saisissez le prix' },
+                                  label: false %>
+                    <% end %>
+
+                    <% @reservation.price = 50 %>
+                    <p>Prix de la consultation : <strong><%= @reservation.price %> €</strong></p>
+
+                  </div>
+
+
+                  <div class="button-validate">
+                    <button type="submit" class="button-validate">Validez le rendez-vous</button>
+                  </div>
+
+
+                </div>
+              <% end %>
+
           </div>
-          <div class="boutton-valider">
-            <button type="submit" class="boutton-valider">Valider le rendez-vous</button>
-          </div>
 
-        </div>
         <% end %>
-      </div>
-    </div>
+
   <% end %>
