@@ -1,26 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="search-bar">
 
   <%= form_with url: users_path, method: :get, html: { class: "d-flex derriere", data: { search_users_target: 'form' } } do |f| %>
     <%= f.text_field :query,
 
-                      placeholder: "Recherche",
+                      placeholder: "Recherchez",
                       value: params[:query],
                       id: "search-input",
                       class: "search-input",
