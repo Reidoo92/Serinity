@@ -17,11 +17,11 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-  has_many :reservations, foreign_key: 'patient_id'
+  has_many :reservations
   has_many :doctor_reservations, class_name: 'Reservation', foreign_key: 'doctor_id'
   has_many :patient_reservations, class_name: 'Reservation', foreign_key: 'patient_id'
 
-  validates :first_name, :last_name, :email, :number, :adress, :age, :role, presence: true
+  validates :first_name, :last_name, :email, :number, :address, :age, :role, presence: true
   validates :email, :number, uniqueness: true
   validates :role, inclusion: { in: %w(doctor patient) }
 
@@ -34,10 +34,4 @@ class User < ApplicationRecord
   validates :number, format: { with: PHONE_NUMBER }
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  def update_balance_based_on_past_reservations
-    self.balance = reservations.where('date < ?', Date.today).sum(:price)
-    save
-  end
-  
 end
-

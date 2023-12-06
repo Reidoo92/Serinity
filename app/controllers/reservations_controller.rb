@@ -31,7 +31,9 @@ class ReservationsController < ApplicationController
   end
 
   def upcoming
+
     @reservations = Reservation.where(doctor_id: current_user).where("date >= ?", Date.today)
+
     if params[:query].present?
       sql_subquery = <<~SQL
       users.first_name ILIKE :query
@@ -41,10 +43,11 @@ class ReservationsController < ApplicationController
 
       @reservations = @reservations.joins(:patient).where(sql_subquery, query: "%#{params[:query]}%")
     end
-    respond_to do |format|
-      format.html #{users_path}
-      format.text { render partial: 'reservations/list-rdv', locals: { reservations: @reservations}, formats: [:html]}
-    end
+
+  respond_to do |format|
+    format.html # Utilise la vue HTML par défaut pour l'action
+    format.text { render partial: 'reservations/list-rdv', locals: { reservations: @reservations}, formats: [:html] }
+  end
 
 
   end

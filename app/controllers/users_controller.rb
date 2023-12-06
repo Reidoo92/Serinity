@@ -46,12 +46,6 @@ class UsersController < ApplicationController
     @reservations = Reservation.all
   end
 
-  def update_balance
-    user = User.find(params[:id])
-    user.update_balance_based_on_past_reservations
-    redirect_to user_path(user), notice: 'Balance mise à jour avec succès.'
-  end
-
   private
 
   def user_params
