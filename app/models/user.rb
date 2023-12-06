@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   has_one_attached :avatar
-  
+
   # -------------- Cloudinary -------------- #
   #
   has_one_attached :photo
@@ -34,3 +34,4 @@ class User < ApplicationRecord
   validates :number, format: { with: PHONE_NUMBER }
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
+

@@ -12,7 +12,7 @@
 
     <%= render "shared/nav-dashboard" %>
 
-    <div data-controller="search-users" data-search_users_target="lol" class="main-content">
+    <div data-controller="search-users"  class="main-content">
 
       <div class="top-index">
         <h1 class="title-index"> Mes patients <span class="counterpatient"><%= User.where(role: "patient").count %></span></h1>

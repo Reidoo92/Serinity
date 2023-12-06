@@ -1,15 +1,14 @@
 
 
-<!-- ------------------------------- Index qui permet au docteur de voire tous ces patients ------------------------------- -->
   <body class="patients-home">
 
       <%= render "shared/nav-dashboard" %>
 
-      <div  data-controller="search-users" class="main-content">
+      <div  data-controller="search-reserv" class="main-content">
 
         <div class="top-index">
           <h1>Mes rendez-vous<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).where("date >= ?", Date.today).count %></span></h1>
-          <%= render "users/search" %>
+          <%= render "search-reserv" %>
         </div>
         <%= render "list-rdv" %>
       </div>
