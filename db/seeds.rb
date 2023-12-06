@@ -233,7 +233,7 @@ marine = User.create(
   email: 'marine@gmail.com',
   password: 'marine@gmail.com',
   first_name: 'Marine',
-  last_name: 'Vançon',
+  last_name: 'Moreau',
   age: 9,
   number: '0711675452',
   adress: '13 Rue des Lions Saint-Paul, 75004 Paris',

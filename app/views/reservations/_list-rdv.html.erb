@@ -17,10 +17,7 @@
 
                  <div class="show-more">
                     <%= link_to "Voir plus", user_path(reservation.patient.id) %>
-
                   </div>
-
-
 
                 <div class="patient-name">
                   <p><%= "#{reservation.patient.first_name.capitalize} #{reservation.patient.last_name.upcase}" %></p>
@@ -33,10 +30,10 @@
                   <span>
                     <i class="fa-solid fa-calendar-days" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
                     <% if reservation.date.present? %>
-                                <%= reservation.date.strftime('%d-%m-%Y') %>
-                              <% else %>
-                                N/A
-                              <% end %>
+                      <%= reservation.date.strftime('%d-%m-%Y') %>
+                    <% else %>
+                      N/A
+                    <% end %>
                   </span>
                 </div>
               </div>

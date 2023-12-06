@@ -37,7 +37,7 @@
                         .reverse
                         .each do |reservation| %>
                         <tr>
-                            <td><strong><%= "#{reservation.patient.first_name} #{reservation.patient.last_name}" %></strong></td>
+                            <td><strong><%= "#{reservation.patient.first_name.capitalize} #{reservation.patient.last_name.upcase}" %></strong></td>
                             <td><%= reservation.id %></td>
                             <td>
                               <% if reservation.date.present? %>
