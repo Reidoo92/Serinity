@@ -4,8 +4,19 @@ class UsersController < ApplicationController
   end
 
   def show
+    @doctors = User.where(role: 'doctor')
     @user = User.find(params[:id])
     @reservation = Reservation.new
+
+      @markers = @doctors.geocoded.map do |doctor|
+        if doctor.id == @user.id
+          {
+            lat: doctor.latitude,
+            lng: doctor.longitude,
+            #info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
+          }
+        end
+      end
   end
 
   def index
