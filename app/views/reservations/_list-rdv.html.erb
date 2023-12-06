@@ -1,5 +1,8 @@
   <div data-search-reserv-target= "listreserv" class="patients-container">
-          <% @reservations.each do |reservation| %>
+            <% @reservations
+                        .select { |reservation| reservation.date.present? && reservation.date > Date.today }
+                        .sort_by { |reservation| reservation.date }
+                        .each do |reservation| %>
             <div class="patient-card">
               <div class="patient-info">
                 <div class="patient-avatar"> <!-- Ajoutez la classe "patient-avatar" ici -->
@@ -29,7 +32,11 @@
                   </span>
                   <span>
                     <i class="fa-solid fa-calendar-days" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
-                    <%= reservation.date %>
+                    <% if reservation.date.present? %>
+                                <%= reservation.date.strftime('%d-%m-%Y') %>
+                              <% else %>
+                                N/A
+                              <% end %>
                   </span>
                 </div>
               </div>

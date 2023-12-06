@@ -6,10 +6,9 @@
         <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
       <% end %>
 
+      <%= link_to "Accueil", root_path %>
 
       <% if current_user %>
-      
-        <%= link_to "Accueil", root_path %>
 
         <%= link_to "Profil", user_path(current_user), class: "nav-link" %>
         <li><a href="#">Messages</a></li>
