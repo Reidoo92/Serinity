@@ -12,10 +12,24 @@
   padding: 0px 30px;
 }
 
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #2c3e50;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  width: 300px;
+  height: 40px;
+  position: absolute;
+  top: 84px;
+  left: 285px;
+}
+
 .search-bar {
   display: flex;
-  justify-content: center;
-  padding-top: 30px;
+  gap: 50px;
+  padding-top: 10px;
 }
 
 .search-bar input {
@@ -123,26 +137,23 @@ th {
 
 .top-index {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
-}
 
-.title-index {
-  padding-top: 10px;
-}
+
+// .title-index {
+//   padding-top: 10px;
+// }
 
 .patients-container {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 7px;
-  margin-left: 34px;
-  margin-top: 80px;
+  margin-left: 2px;
+  margin-top: 56px;
   padding-top: 10px;
   padding-left: 15px;
   height: 75vh;

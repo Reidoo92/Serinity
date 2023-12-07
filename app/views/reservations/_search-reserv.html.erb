@@ -1,6 +1,7 @@
 <div class="search-bar">
 
   <%= form_with url: upcoming_reservations_path, method: :get, html: { class: "d-flex derriere", data: { search_reserv_target: 'formreserv' } } do |f| %>
+  <div>
     <%= f.text_field :query,
 
                       placeholder: "Recherchez",
@@ -8,13 +9,18 @@
                       id: "search-input-patient",
                       class: "search-input",
                       data: { action: 'keyup->search-reserv#update', search_reserv_target: 'searchInputreserv' } %>
+  </div>
+
+  <div>
+
      <%= f.text_field :date_query,
                       type: 'date',
                       placeholder: "Recherchez par date",
                       value: params[:date_query],
                       class: "search-input-date",
                       data: { action: 'change->search-reserv#update', search_reserv_target: 'dateInputreserv' } %>
-
+  </div>
+  
   <% end %>
 
 </div>

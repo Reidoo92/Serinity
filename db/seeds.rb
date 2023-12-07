@@ -111,14 +111,14 @@ alexis = User.create(
   password: 'alexis@gmail.com',
   first_name: 'Alexis',
   last_name: 'Stephan',
-  age: 99,
+  age: 64,
   number: '0676535212',
   adress: '17 Av. Bosquet, 75007 Paris',
   speciality: 'Psychologue',
   role: 'doctor'
 )
-photo_url = 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1671276463/xrbguid47igglejilbqf.jpg'
-alexis.photo.attach(io: URI.open(photo_url), filename: 'file1.jpg', content_type: 'image/jpeg')
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_alexis_vieux.jpg')
+alexis.photo.attach(io: File.open(image_path), filename: 'pp_alexis_vieux.jpg', content_type: 'image/jpeg')
 
 # Création des patients
 puts 'Creating Patients...'
