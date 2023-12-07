@@ -13,7 +13,11 @@
 
 
       <div class="title-show">
-        <h1>Mon patient</h1>
+        <% if current_user != @user %>
+          <h1>Mon patient</h1>
+        <% else %>
+          <h1>Mon profil</h1>
+        <% end %>
       </div>
 
 
