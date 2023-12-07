@@ -129,13 +129,13 @@ th {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  gap: 7px; /* Adjust the space between cards */
+  gap: 7px;
   margin-left: 2px;
-  margin-top: 44px;
-  padding-top: 30px;
+  margin-top: 80px;
+  padding-top: 10px;
   padding-left: 15px;
-  height: 590px;
-  overflow: auto;
+  height: 75vh;
+  overflow: scroll;
 }
 
 @media only screen and (max-width: 1400px) {
