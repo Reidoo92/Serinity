@@ -8,7 +8,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-
     if current_user.role == "doctor"
       doctor = current_user
       patient = User.find(params[:user_id])
@@ -21,37 +20,36 @@ class ReservationsController < ApplicationController
     reservation.doctor = doctor
     reservation.patient = patient
     reservation.price = 50
+
     if reservation.save!
       doctor.update(balance: (doctor.balance + reservation.price))
       redirect_to root_path, notice: "Votre réservation a bien été prise en compte."
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def upcoming
-
     @reservations = Reservation.where(doctor_id: current_user).where("date >= ?", Date.today)
 
     if params[:query].present?
       sql_subquery = <<~SQL
-      users.first_name ILIKE :query
-      OR users.last_name ILIKE :query
+        users.first_name ILIKE :query
+        OR users.last_name ILIKE :query
       SQL
-
 
       @reservations = @reservations.joins(:patient).where(sql_subquery, query: "%#{params[:query]}%")
     end
 
-  respond_to do |format|
-    format.html # Utilise la vue HTML par défaut pour l'action
-    format.text { render partial: 'reservations/list-rdv', locals: { reservations: @reservations}, formats: [:html] }
+    if params[:date_query].present?
+      @reservations = @reservations.where(date: params[:date_query])
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'reservations/list-rdv', locals: { reservations: @reservations }, formats: [:html] }
+    end
   end
-
-
-  end
-
 
   def past
     @reservations = Reservation.where(doctor_id: current_user).where("date <= ?", Date.today)

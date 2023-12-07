@@ -5,9 +5,15 @@
 
                       placeholder: "Recherchez",
                       value: params[:query],
-                      id: "search-input",
+                      id: "search-input-patient",
                       class: "search-input",
                       data: { action: 'keyup->search-reserv#update', search_reserv_target: 'searchInputreserv' } %>
+     <%= f.text_field :date_query,
+                      type: 'date',
+                      placeholder: "Recherchez par date",
+                      value: params[:date_query],
+                      class: "search-input-date",
+                      data: { action: 'change->search-reserv#update', search_reserv_target: 'dateInputreserv' } %>
 
   <% end %>
 

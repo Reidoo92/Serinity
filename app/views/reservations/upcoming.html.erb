@@ -7,7 +7,7 @@
       <div  data-controller="search-reserv" class="main-content">
 
         <div class="top-index">
-          <h1>Mes rendez-vous<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).where("date >= ?", Date.today).count %></span></h1>
+          <h1 class="mes-rdv">Mes rendez-vous<span class="counterpatient"><%= Reservation.where(doctor_id: current_user).where("date >= ?", Date.today).count %></span></h1>
           <%= render "search-reserv" %>
         </div>
         <%= render "list-rdv" %>
