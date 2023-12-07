@@ -15,7 +15,7 @@ class UsersController < ApplicationController
           {
             lat: doctor.latitude,
             lng: doctor.longitude,
-            #info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
+            info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
           }
         end
       end
@@ -25,12 +25,14 @@ class UsersController < ApplicationController
           {
             lat: patient.latitude,
             lng: patient.longitude,
-            #info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
+            info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
           }
         end
       end
     end
   end
+
+
 
   def index
 
@@ -41,9 +43,9 @@ class UsersController < ApplicationController
     if @role == 'patient'
       @markers = @doctors.geocoded.map do |doctor|
         {
-          lat: doctor.latitude,
           lng: doctor.longitude,
-          #info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
+          lat: doctor.latitude,
+          info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
         }
       end
     end
