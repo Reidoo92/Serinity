@@ -1,0 +1,37 @@
+<div class="patient-card-window">
+  <div class="patient-info-window">
+    <div class="patient-avatar-window mapbox-marker-avatar"> <!-- Ajoutez la classe "patient-avatar" ici -->
+      <%= link_to user_path(doctor.id), class: "link-card-doctor" do %>
+        <% if doctor.photo.attached? %>
+          <%= cl_image_tag doctor.photo.key, crop: :fill, class: "avatar" %>
+        <% else %>
+          <%= image_tag("pp_default.png", class: "avatar") %>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+    <div class="show-more-window">
+
+      <%= link_to "Voir plus", user_path(doctor.id) %>
+
+    </div>
+
+
+
+    <div class="patient-name-window">
+      <p><%= "#{doctor.first_name.capitalize} #{doctor.last_name.upcase}" %></p>
+    </div>
+    <div class="patient-details-window">
+      <span>
+        <i class="fas fa-envelope" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6;"></i>
+        <%= doctor.email %>
+      </span>
+      <span>
+        <i class="fas fa-phone" style="font-size: 0.7rem; padding-top: 6px; padding-left: 8px; opacity: 0.6; "></i>
+        <%= doctor.number %>
+      </span>
+    </div>
+  </div>
+</div>

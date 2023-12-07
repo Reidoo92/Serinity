@@ -30,7 +30,7 @@ gilson = User.create(
   last_name: 'Djassan',
   age: 25,
   number: '0687654321',
-  adress: '67 Rue Crozatier, 75012 Paris',
+  adress: '16 Vla Gaudelet, 75011 Paris',
   role: 'doctor'
 )
 photo_url = 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1696260712/eclbw8adfm12hx4klcxk.jpg'
@@ -57,7 +57,7 @@ remi = User.create(
   last_name: 'Beuch',
   age: 30,
   number: '0690898989',
-  adress: '195 Bd Saint-Germain, 75007 Paris',
+  adress: '113 Rue Monge, 75005 Paris',
   speciality: 'Psychologue',
   role: 'doctor'
 )

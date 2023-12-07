@@ -1,0 +1,128 @@
+
+
+
+.mapboxgl-popup {
+  // max-width: 220px;
+
+
+
+}
+
+.mapboxgl-popup-content {
+  // text-align: center;
+  // font-family: "Open Sans", sans-serif;
+
+}
+
+
+.mapbox-marker-bounce {
+  animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* Add this to your stylesheet */
+// .custom-popup {
+//   animation: popupExpand 0.3s ease-out;
+// }
+
+// @keyframes popupExpand {
+//   from {
+//     transform: scale(0);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: scale(1);
+//     opacity: 1;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------- Card dans la window de mapbox ---------------------------*/
+
+
+.patient-card-window {
+  position: relative;
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s, border-color 0.2s; /* Ajoutez une transition pour l'effet de zoom et la couleur de bordure */
+  border: 2px solid transparent; /* Ajoutez une transition pour l'effet de zoom */
+  border-radius: 6px;
+  padding: 13px;
+  width: 220px; /* Adjust card width as needed */
+  height: 105px;
+}
+
+.patient-card-window:hover {
+  transform: scale(1.05); /* Augmente la taille de la carte au passage de la souris */
+  border-color: #2c3e50;
+}
+
+.patient-info-window {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-avatar-window {
+  position: absolute;
+  right: 12px;
+}
+
+.show-more-window {
+  position: absolute;
+  background-color: #2c3e50;
+  border-radius: 3px;
+  bottom: 13px;
+  right: 13px;
+  width: 66px;
+  height: 15px;
+}
+
+.show-more-window a {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.show-more-window:hover {
+  background-color: #4b6886;
+}
+
+.patient-name-window p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.patient-details-window span {
+  display: block;
+  color: #666;
+  font-size: 0.9em;
+}
