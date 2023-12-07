@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
 
     if reservation.save!
       doctor.update(balance: (doctor.balance + reservation.price))
-      redirect_to root_path, notice: "Votre réservation a bien été prise en compte."
+      redirect_to validate_path, notice: "Votre réservation a bien été prise en compte."
     else
       render :new, status: :unprocessable_entity
     end
@@ -67,6 +67,11 @@ class ReservationsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+
+  def validate
+
   end
 
   private

@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   get 'upcoming_reservations', to: 'reservations#upcoming', as: 'upcoming_reservations'
   get 'past_reservations', to: 'reservations#past', as: 'past_reservations'
   get '/profiles', to: 'users#profiles'
+  get '/validate', to: 'reservations#validate'
 
-  resources :users, only: [:show, :index] do
-    resources :reservations, only: [:create, :new, :index, :show]
+
+    resources :users, only: [:show, :index] do
+    resources :reservations, only: [:create, :new, :index, :show, :validate]
   end
   resources :users
 end
