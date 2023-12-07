@@ -44,7 +44,7 @@ laid = User.create(
   last_name: 'Sereir',
   age: 22,
   number: '0798765432',
-  adress: '5 Av. Elisée Reclus, 75007 Paris',
+  adress: '12 Rue Pierre Lescot, 75001 Paris',
   role: 'doctor'
 )
 photo_url = 'https://avatars.githubusercontent.com/u/119537150?v=4'
@@ -113,7 +113,7 @@ alexis = User.create(
   last_name: 'Stephan',
   age: 99,
   number: '0676535212',
-  adress: '3 Rue du Mail, 75002 Paris',
+  adress: '17 Av. Bosquet, 75007 Paris',
   speciality: 'Psychologue',
   role: 'doctor'
 )
