@@ -244,6 +244,11 @@ body {
   align-items: center;
   height: 480px;
 }
+
+.full-widths img {
+  width: 100%;
+}
+
 .half-widths {
   display: grid;
   grid-template-columns: 70% 30%;

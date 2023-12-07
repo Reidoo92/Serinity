@@ -414,9 +414,9 @@ end
 # Création des réservations futures
 puts 'Creating UPCOMING Reservations...'
 
-67.times do
+120.times do
   Reservation.create(
-    date: Faker::Date.between(from: '2023-12-10', to: '2024-02-01'),
+    date: Faker::Date.between(from: '2023-12-10', to: '2024-01-10'),
     price: 50,
     doctor_id: User.where(role: 'doctor').first.id,
     patient_id: User.where(role: 'patient').sample.id
