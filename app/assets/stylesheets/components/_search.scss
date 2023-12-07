@@ -7,16 +7,6 @@
   flex-direction: column;
 }
 
-.search-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #3498db;
-  border-radius: 8px;
-  font-size: 16px;
-  outline: none;
-  width: 400px;
-  height: 40px;
-}
 
 .search-button {
   background-color: #e7bac9;
@@ -39,6 +29,30 @@
   margin-right: 8px;
 }
 
-.search-input {
+#search-input-patient{
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #2c3e50;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  width: 400px;
+  height: 40px;
+  position: absolute;
+  top: 84px;
+  left: 285px;
+}
 
+.search-input-date {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #2c3e50;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  width: 400px;
+  height: 40px;
+  position: absolute;
+  top: 84px;
+  left: 1000px;
 }
