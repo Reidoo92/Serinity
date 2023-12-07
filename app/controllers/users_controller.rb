@@ -25,7 +25,7 @@ class UsersController < ApplicationController
           {
             lat: patient.latitude,
             lng: patient.longitude,
-            info_window: render_to_string(partial: "info_window", locals: { doctor: doctor })
+            info_window: render_to_string(partial: "info_window", locals: { doctor: patient })
           }
         end
       end
