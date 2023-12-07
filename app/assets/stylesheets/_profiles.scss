@@ -39,7 +39,10 @@
   flex-grow: 1;
   padding: 20px;
   background-color: #ecf0f1;
+  overflow-y: scroll;
+  height: 100vh;
 }
+
 
 .main-content h1 {
   color: #2c3e50;

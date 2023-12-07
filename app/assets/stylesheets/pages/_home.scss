@@ -63,7 +63,7 @@ body {
 .dashboard {
   display: flex;
   flex-direction: row;
-  gap: 56px;
+  // gap: 56px;
   background-color: #ecf0f1;
   height: 100vh;
   overflow-y: hidden;
@@ -78,7 +78,9 @@ body {
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin-top: 50px;
+  flex-grow: 1;
+  align-items: center;
 }
 
 .pourcent-up {
@@ -94,6 +96,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   height: 97px;
+  gap: 25px;
 }
 
 .card-container a {
