@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  animation: fadeInUp 3s ease-out 0s forwards; /* Modifié ici */
+  animation: fadeInUp 2s ease-out 0s forwards; /* Modifié ici */
 }
 
 .confirmation-container {
@@ -26,7 +26,7 @@
   height: 300px;
   width: 500px;
   gap: 40px;
-  animation: fadeInUp 2s ease-out 0s forwards; /* Modifié ici */
+  animation: fadeInUp 1s ease-out 0s forwards; /* Modifié ici */
 }
 
 .confirmation-popup {
@@ -36,12 +36,12 @@
   border-radius: 70px;
   width: 104px;
   opacity: 0;
-  animation: fadeInUp 3s ease-out 0s forwards; /* Modifié ici */
+  animation: fadeInUp 2s ease-out 0s forwards; /* Modifié ici */
 }
 
 .confirmation-container p {
   color: white;
-  animation: fadeInUp 3s ease-out 0s forwards; /* Modifié ici */
+  animation: fadeInUp 2s ease-out 0s forwards; /* Modifié ici */
 }
 
 .icon-check {
