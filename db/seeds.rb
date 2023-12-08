@@ -120,6 +120,34 @@ alexis = User.create(
 image_path = Rails.root.join('app', 'assets', 'images', 'pp_alexis_vieux.jpg')
 alexis.photo.attach(io: File.open(image_path), filename: 'pp_alexis_vieux.jpg', content_type: 'image/jpeg')
 
+francois = User.create(
+  email: 'francois@gmail.com',
+  password: 'francois@gmail.com',
+  first_name: 'francois',
+  last_name: 'Villalba',
+  age: 46,
+  number: '0673445212',
+  adress: '85 Av. Emile Zola, 75015 Paris',
+  speciality: 'Psychologue',
+  role: 'doctor'
+)
+photo_url = 'https://avatars.githubusercontent.com/u/145837598?v=4'
+francois.photo.attach(io: URI.open(photo_url), filename: 'file1.jpg', content_type: 'image/jpeg')
+
+salma = User.create(
+  email: 'salma@gmail.com',
+  password: 'salma@gmail.com',
+  first_name: 'salma',
+  last_name: 'Zakha',
+  age: 23,
+  number: '0733147702',
+  adress: '31 Rue de Chabrol, 75010 Paris',
+  speciality: 'Psychologue',
+  role: 'doctor'
+)
+image_path = Rails.root.join('app', 'assets', 'images', 'pp_salma_psy.jpg')
+salma.photo.attach(io: File.open(image_path), filename: 'pp_salma.jpg', content_type: 'image/jpeg')
+
 # Création des patients
 puts 'Creating Patients...'
 
