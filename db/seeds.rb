@@ -444,7 +444,7 @@ puts 'Creating UPCOMING Reservations...'
 
 120.times do
   Reservation.create(
-    date: Faker::Date.between(from: '2023-12-10', to: '2024-01-10'),
+    date: Faker::Date.between(from: '2023-12-09', to: '2023-12-31'),
     price: 50,
     doctor_id: User.where(role: 'doctor').first.id,
     patient_id: User.where(role: 'patient').sample.id
